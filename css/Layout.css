@@ -10,10 +10,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    height: 1920px; /* Set exact height to match the design */
     width: 1080px;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding-sm) var(--padding-xs) var(--padding-xxl);
+    padding: var(--padding-sm) var(--padding-xs) var(--padding-lg);
     box-sizing: border-box;
   }

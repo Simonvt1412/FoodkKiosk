@@ -7,6 +7,7 @@
     color: var(--main-color);
     margin-bottom: var(--padding-xxs);
     line-height: 1;
+    margin-bottom: 3rem;
 }
 
 .subtitle {
@@ -15,6 +16,7 @@
     text-align: center;
     color: var(--main-color);
     line-height: 1.1;
+    margin-bottom: 3rem;
 }
 
 .header {

@@ -2,19 +2,21 @@
 
 .buttons-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: var(--padding-xl);
+    margin-top: auto;
     margin-bottom: var(--padding-lg);
     padding: 0 var(--padding-md);
+    gap: 5rem;
   }
   
   .button {
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
     color: var(--main-text-color);
     font-family: "Poppins", sans-serif;
-    font-size: var(--main-page-buttons--text);
+    font-size: 4.6875rem; /* Adjusted for proper text size */
+    font-weight: 400;
     border: var(--stroke-sm) solid var(--main-stroke-color);
     border-radius: 50px;
     width: 450px;
@@ -25,18 +27,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 500;
-    padding: var(--padding-xs);
-    margin: var(--padding-xxs);
+    padding: var(--padding-xxs);
+    margin: 0;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase; /* Make text all uppercase to match image */
   }
   
-  .button.eat-in {
-    margin-right: var(--padding-lg);
-  }
-  
-  .button.take-out {
-    margin-left: var(--padding-lg);
-  }
+  /* Removed individual margin settings for eat-in and take-out buttons */
   
   .button:hover {
     background-color: var(--button-pressed-color);
