@@ -1,38 +1,26 @@
-/* CSS for Navigation Buttons */
-
-.navigation-buttons {
+nav {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    padding: 0 var(--padding-md);
-    margin-top: auto;
-    margin-bottom: var(--padding-lg);
-  }
-  
-  .nav-button {
-    width: 100px;
-    height: 100px;
-    background-color: var(--light--green);
+    margin-bottom: -13rem;
+}
+
+.back-button-svg, .home-button-svg {
+    color: black;
+    width: 7rem;
+    height: 7rem;
+    background-color: var(--secondary-color);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: var(--stroke-xs) solid var(--main-stroke-color);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .nav-button:hover {
-    background-color: var(--slightly--dark--green);
-    transform: scale(1.05);
-  }
-  
-  .nav-button:active {
-    transform: scale(0.98);
-  }
-  
-  .nav-button img {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
-  }
+    padding: 0.5rem;
+    margin: var(--padding-sm);
+}
+
+.shopping-cart-svg {
+    width: 7rem;
+    height: 7rem;
+    margin-top: -8rem;
+    background-color: var(--secondary-color);
+    border-radius: 2rem 0 0 2rem;
+    padding: 1rem;
+    position: fixed;
+    right: 0;
+}

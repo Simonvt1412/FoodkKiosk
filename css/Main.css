@@ -5,12 +5,8 @@
 @import "./Logo.css";
 @import "./Buttons.css";
 @import "./Layout.css";
-/* Import new CSS files for size selection page */
 @import "./SizeOptions.css";
-@import "./SmallSize.css";
-@import "./MediumSize.css";
-@import "./LargeSize.css";
-@import "./Navigation.css";
+@import "./navigation.css";
 
 :root {
 /* Font Sizez */

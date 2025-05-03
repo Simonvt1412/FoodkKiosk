@@ -1,93 +1,105 @@
-/* CSS for Size Options Container */
-
 .size-options-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    gap: 2rem;
-    margin: var(--padding-lg) 0;
-  }
-  
-  /* Common styles for all size options */
-  .size-option {
+    gap: 1.5rem;
+    min-height: 100vh;
+    margin-top: -15rem;
+}
+
+.size-option-small {
+    margin-bottom: var(--padding-xl);
+    width: 37.5rem;
+    height: 18.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
-    border: 3px solid var(--main-stroke-color);
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    color: var(--main-text-color);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .size-option.small {
-    width: 600px;
-    height: 150px;
-    justify-content: center;
-    padding: 0;
-  }
-  
-  .size-option.medium {
-    width: 750px;
-    height: 200px;
     justify-content: space-between;
-    padding: 0 30px;
-  }
-  
-  .size-option.large {
-    width: 870px;
-    height: 200px;
-    padding: 0 30px;
-  }
-  
-  .size-icon {
-    height: 80%;
-    object-fit: contain;
-  }
-  
-  .size-icon.small {
-    display: none; /* Hide icon for small */
-  }
-  
-  .size-icon.medium {
-    height: 160px;
-    margin-left: 10px;
-  }
-  
-  .size-icon.large {
-    height: 120px;
-    margin-left: 10px;
-  }
-  
-  .size-text {
+    border-radius: 2rem;
+    border: var(--stroke-sm) solid var(--main-stroke-color);
+}
+
+.size-icon-small {
+    margin-top: var(--padding-xs);
+    width: 7.6875rem;
+    padding-top: 20px;
+    padding-bottom: var(--padding-xs);
+}
+
+.size-price, .size-name {
+    font-size: var(--small-box-text);
+    color: var(--white);
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 200;
+}
+
+.size-price {
+    align-self: flex-end;
+    padding-right: var(--padding-xs);
+}
+
+.size-name {
+    padding-bottom: var(--padding-xs);
+}
+
+.size-option-medium {
+    width: 46.875rem;
+    height: 23.4375rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    color: white;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .size-option.small .size-text {
-    font-size: 3.125rem;
-  }
-  
-  .size-option.medium .size-text {
-    font-size: 3.75rem;
-    justify-content: flex-end;
-    padding-right: 20px;
-  }
-  
-  .size-option.large .size-text {
-    font-size: 4.375rem;
-  }
-  
-  /* Remove individual name and price elements as they're combined in the screenshot */
-  .size-name, .size-price {
-    display: none;
-  }
+    background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
+    justify-content: space-between;
+    border-radius: 2rem;
+    border: var(--stroke-sm) solid var(--main-stroke-color);
+    margin-bottom: var(--padding-xl);
+}
+
+.size-icon-medium {
+    width: 10.625rem;
+    padding-top: var(--padding-sm);
+    padding-bottom: var(--padding-lg);
+}
+
+.size-option-large {
+    width: 54.375rem;
+    height: 28.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
+    justify-content: space-between;
+    border-radius: 2rem;
+    border: var(--stroke-sm) solid var(--main-stroke-color);
+}
+
+.size-icon-large {
+    width: 14.625rem;
+    padding-top: var(--padding-md);
+    padding-bottom: var(--padding-lg);
+}
+
+.size-name-small, .size-price-small {
+    font-size: var(--small-box-text);
+}
+
+.size-name-medium, .size-price-medium {
+    font-size: var(--medium-box-text);
+}
+
+.size-name-large, .size-price-large{
+    font-size: var(--large-box-text);
+}
+
+.size-name-small {
+    margin-bottom: -1rem;
+}
+.size-name-medium {
+    margin-bottom: -2rem;
+}
+
+.size-name-large {
+    margin-bottom: -2rem;
+}
