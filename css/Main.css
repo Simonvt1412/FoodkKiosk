@@ -3,6 +3,8 @@
 @import "./Title.css";
 @import "./Background.css";
 @import "./Logo.css";
+@import "./Buttons.css";
+@import "./Layout.css";
 
 :root {
 /* Font Sizez */

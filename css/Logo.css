@@ -4,35 +4,21 @@
 .logo-container {
     width: 800px;
     height: 800px;
-    background-color: rgba(248, 239, 207, 1); /* Exact beige background color */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid black;
-    
-    /* Center positioning - can be removed if not needed */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-  
-  /* Inner orange circle */
-  .logo {
-    width: 80%;
-    height: 80%;
-    background-color: #ffa500; /* Orange background */
+    background-color: #f8efcf;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
+    border: var(--stroke-xs) solid black;
+    margin: var(--padding-lg) auto;
   }
   
-  /* If you're adding the pasta image inside the logo */
-  .logo img {
-    max-width: 90%;
-    max-height: 90%;
+  /* Logo styling */
+  .logo {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    object-position: center;
   }
