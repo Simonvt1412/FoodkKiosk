@@ -1,0 +1,38 @@
+/* CSS for Pasta Pop-Up Logo Only */
+
+/* Logo container styling */
+.logo-container {
+    width: 800px;
+    height: 800px;
+    background-color: rgba(248, 239, 207, 1); /* Exact beige background color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    
+    /* Center positioning - can be removed if not needed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  /* Inner orange circle */
+  .logo {
+    width: 80%;
+    height: 80%;
+    background-color: #ffa500; /* Orange background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  /* If you're adding the pasta image inside the logo */
+  .logo img {
+    max-width: 90%;
+    max-height: 90%;
+  }

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
+@import "./reset.css";
+@import "./Title.css";
+@import "./Background.css";
+@import "./Logo.css";
+
+:root {
+/* Font Sizez */
+--title: 9.375rem;
+--main-box--text: 3.125rem;
+--title-subtext: 6.25rem;
+--main-page-buttons--text: 4.6875rem;
+--small-box-text: 3.125rem;
+--medium-box-text: 3.75rem;
+--large-box-text: 4.375rem;
+--bottom-text: 4.6875rem;
+--box-subtext: 2.5rem;
+--button-text: 1.5625rem;
+
+/* Stroke Sizes */
+--stroke-xs: 0.5rem;
+--stroke-sm: 0.625rem;
+--stroke-md: 0.75rem;
+--stroke-lg: 0.875rem;
+
+/* Padding sizes */
+--no-padding: 0rem;
+--padding-xxs: 0.9375rem;
+--padding-xs: 1.25rem;
+--padding-sm: 2.5rem;
+--padding-md: 3.125rem;
+--padding-lg: 3.75rem;
+--padding-xl: 6.875rem;
+--padding-xxl: 12.5rem;
+--padidng-xxxl: 18.75rem;
+--padding-xxxxl: 20rem;
+
+/* Colors */
+--dark--green: rgba(85, 107, 47, 1);
+--light--green: rgba(166, 209, 92, 1);
+--slightly--dark--green: rgba(127, 164, 63, 1);
+--white: rgba(255, 255, 255, 1);
+--yellow: rgba(255, 217, 0, 1);
+--dark-yellow: rgba(255, 215, 155, 0.5);
+--red: rgba(230, 57, 70, 1);
+
+/*Themes*/
+--main-color: var(--dark--green);
+--background-color: var(--dark-yellow);
+--secondary-color: var(--light--green);
+--main-text-color: var(--white);
+--main-stroke-color: var(--yellow);
+--secondary-stroke-color: var(--red);
+--button-pressed-color: var(--slightly--dark--green);
+}
