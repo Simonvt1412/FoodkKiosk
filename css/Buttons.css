@@ -32,13 +32,10 @@
     line-height: 1;
     letter-spacing: 2px;
     text-transform: uppercase; /* Make text all uppercase to match image */
+    text-decoration: none; /* Add this line to remove underlines */
   }
   
-  /* Removed individual margin settings for eat-in and take-out buttons */
-  
-  .button:hover {
-    background-color: var(--button-pressed-color);
-  }
+  /* Removed hover effects as requested */
   
   .button:active {
     transform: scale(0.98);
