@@ -1,0 +1,15 @@
+/* CSS for Medium Size Option */
+
+.size-option.medium {
+    width: 750px;
+    height: 375px;
+    padding: var(--padding-xs);
+  }
+  
+  .size-option.medium .size-name {
+    font-size: var(--medium-box-text);
+  }
+  
+  .size-option.medium .size-price {
+    font-size: var(--medium-box-text);
+  }

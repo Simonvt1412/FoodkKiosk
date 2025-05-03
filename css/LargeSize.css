@@ -1,0 +1,18 @@
+/* CSS for Large Size Option */
+
+.size-option.large {
+    width: 870px;
+    height: 450px;
+    padding-top: var(--padding-xxs);
+    padding-bottom: var(--padding-xs);
+    padding-left: var(--padding-xxxxl);
+    padding-right: var(--padding-xxxxl);
+  }
+  
+  .size-option.large .size-name {
+    font-size: var(--large-box-text);
+  }
+  
+  .size-option.large .size-price {
+    font-size: var(--large-box-text);
+  }

@@ -1,0 +1,38 @@
+/* CSS for Navigation Buttons */
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 var(--padding-md);
+    margin-top: auto;
+    margin-bottom: var(--padding-lg);
+  }
+  
+  .nav-button {
+    width: 100px;
+    height: 100px;
+    background-color: var(--light--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--stroke-xs) solid var(--main-stroke-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: var(--slightly--dark--green);
+    transform: scale(1.05);
+  }
+  
+  .nav-button:active {
+    transform: scale(0.98);
+  }
+  
+  .nav-button img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
