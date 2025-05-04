@@ -10,9 +10,14 @@
 @import "./Grid.css";
 @import "./card.css";
 @import "./BottomText.css";
+@import "./ShoppingCart.css";
+@import "./CartItem.css";
+@import "./ChefNotes.css";
+@import "./ExtraItem.css";
+@import "./TotalPrice.css";
 
 :root {
-/* Font Sizez */
+/* Font Sizes */
 --title: 9.375rem;
 --main-box--text: 3.125rem;
 --title-subtext: 6.25rem;

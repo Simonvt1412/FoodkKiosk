@@ -1,0 +1,47 @@
+/* CSS for Total Price */
+
+.total-price {
+    background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
+    border: var(--stroke-sm) solid var(--main-stroke-color);
+    border-radius: 10rem;
+    padding: var(--padding-xs) var(--padding-md);
+    color: var(--main-text-color);
+    font-family: "Poppins", sans-serif;
+    font-size: var(--main-box--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 11.75rem;
+    width: 59.375rem;
+    margin-top: 4rem;
+}
+
+.back-arrow img {
+    width: 6.25rem;
+    height: 6.25rem;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.total-text {
+    flex-grow: 1;
+    text-align: center;
+    font-size: var(--medium-box-text);
+}
+
+.pay-button {
+    background-color: var(--main-color);
+    color: var(--main-text-color);
+    border-radius: 3rem;
+    padding: 8px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    width: 9.375rem;
+    height: 4.75rem;
+}
+
+.total-price-value {
+    font-size: var(--main-box--text);
+}
