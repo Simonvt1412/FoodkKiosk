@@ -15,6 +15,7 @@
 @import "./ChefNotes.css";
 @import "./ExtraItem.css";
 @import "./TotalPrice.css";
+@import "./Receipt.css";
 
 :root {
 /* Font Sizes */
@@ -28,6 +29,8 @@
 --bottom-text: 4.6875rem;
 --box-subtext: 2.5rem;
 --button-text: 1.5625rem;
+--receipt-text: 5.625rem;
+--title-secondary: 12.5rem;
 
 /* Stroke Sizes */
 --stroke-xs: 0.5rem;

@@ -1,0 +1,28 @@
+.receipt-container {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
+    width: 44.125rem;
+    height: 44.125rem;
+    align-items: center;
+    border-radius: 2rem;
+    border: solid var(--main-stroke-color) var(--stroke-lg);
+}
+
+.receipt-icon {
+    width: 24.375rem;
+    height: 24.375rem;
+}
+
+.receipt-text {
+    font-size: var(--receipt-text);
+    font-family: "Poppins";
+    color: var(--white);
+    margin-bottom: 3rem;
+}
+
+.title--secondary {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    font-size: var(--title-secondary);
+}
