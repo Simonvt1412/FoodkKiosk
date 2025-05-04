@@ -1,22 +1,22 @@
 /* CSS for Pasta Pop-Up Title and Subtitle */
 
 .title {
-    font-family: "Oregano", "Arial", sans-serif;
+    font-family: var(--primary-font);
     font-size: var(--title);
     text-align: center;
     color: var(--main-color);
     margin-bottom: var(--padding-xxs);
-    line-height: 1;
-    margin-bottom: 3rem;
+    line-height: var(--line-height-sm);
+    margin-bottom: var(--margin-md);
 }
 
 .subtitle {
-    font-family: "Oregano", "Arial", sans-serif;
+    font-family: var(--primary-font);
     font-size: var(--title-subtext);
     text-align: center;
     color: var(--main-color);
-    line-height: 1.1;
-    margin-bottom: 3rem;
+    line-height: var(--line-height-md);
+    margin-bottom: var(--margin-md);
 }
 
 header {

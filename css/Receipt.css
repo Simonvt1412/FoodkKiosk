@@ -2,27 +2,27 @@
     display: flex;
     flex-direction: column;
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
-    width: 44.125rem;
-    height: 44.125rem;
+    width: var(--width-xxxxxl);
+    height: var(--height-full-xxl);
     align-items: center;
-    border-radius: 2rem;
+    border-radius: var(--radius-sm);
     border: solid var(--main-stroke-color) var(--stroke-lg);
 }
 
 .receipt-icon {
-    width: 24.375rem;
-    height: 24.375rem;
+    width: var(--icon-xl);
+    height: var(--icon-xl);
 }
 
 .receipt-text {
     font-size: var(--receipt-text);
-    font-family: "Poppins";
+    font-family: var(--secondary-font);
     color: var(--white);
-    margin-bottom: 3rem;
+    margin-bottom: var(--margin-md);
 }
 
 .title--secondary {
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    margin-top: var(--margin-xxl);
+    margin-bottom: var(--margin-xxl);
     font-size: var(--title-secondary);
 }

@@ -18,11 +18,15 @@
 @import "./Receipt.css";
 
 :root {
+/* Font Family */
+--primary-font: "Oregano", "Arial", sans-serif;
+--secondary-font: "Poppins", sans-serif;
+
 /* Font Sizes */
 --title: 9.375rem;
---main-box--text: 3.125rem;
+--main-box-text: 3.125rem;
 --title-subtext: 6.25rem;
---main-page-buttons--text: 4.6875rem;
+--main-page-buttons-text: 4.6875rem;
 --small-box-text: 3.125rem;
 --medium-box-text: 3.75rem;
 --large-box-text: 4.375rem;
@@ -47,24 +51,106 @@
 --padding-lg: 3.75rem;
 --padding-xl: 6.875rem;
 --padding-xxl: 12.5rem;
---padidng-xxxl: 18.75rem;
+--padding-xxxl: 18.75rem;
 --padding-xxxxl: 20rem;
 
+/* Margin sizes */
+--margin-none: 0;
+--margin-xxs: 0.5rem;
+--margin-xs: 1rem;
+--margin-sm: 2rem;
+--margin-md: 3rem;
+--margin-lg: 4rem;
+--margin-xl: 5rem;
+--margin-xxl: 10rem;
+--margin-xxxl: 12rem;
+--margin-neg-md: -2rem;
+--margin-neg-lg: -4rem;
+--margin-neg-xl: -8rem;
+--margin-neg-xxl: -13rem;
+--margin-neg-xxxl: -15rem;
+
+/* Widths */
+--width-xxs: 7rem;
+--width-xs: 9.375rem;
+--width-sm: 10.3125rem;
+--width-md: 11rem;
+--width-lg: 12.3125rem;
+--width-xl: 14.625rem;
+--width-xxl: 24.375rem;
+--width-xxxl: 31.25rem;
+--width-xxxxl: 37.5rem;
+--width-xxxxxl: 44.125rem;
+--width-full-sm: 46.875rem;
+--width-full-md: 54.375rem;
+--width-full-lg: 55.75rem;
+--width-full-xl: 59.375rem;
+--width-full-xxl: 800px;
+
+/* Heights */
+--height-xxs: 3.75rem;
+--height-xs: 4rem;
+--height-sm: 4.75rem;
+--height-md: 6.25rem;
+--height-lg: 6.5625rem;
+--height-xl: 7.625rem;
+--height-xxl: 10rem;
+--height-xxxl: 11.75rem;
+--height-full-sm: 18.75rem;
+--height-full-md: 23.4375rem;
+--height-full-lg: 24.375rem;
+--height-full-xl: 28.125rem;
+--height-full-xxl: 44.125rem;
+--height-full-xxxl: 800px;
+
+/* Border Radius */
+--radius-xs: 1rem;
+--radius-sm: 2rem;
+--radius-md: 3rem;
+--radius-lg: 3.125rem;
+--radius-xl: 3.5rem;
+--radius-xxl: 5rem;
+--radius-xxxl: 10rem;
+--radius-circle: 50%;
+
+/* Misc Sizes */
+--icon-xs: 6.25rem;
+--icon-sm: 7.6875rem;
+--icon-md: 10.625rem;
+--icon-lg: 14.625rem;
+--icon-xl: 24.375rem;
+--svg-icon-sm: 7rem;
+--blur-effect: 10px;
+--line-height-sm: 1;
+--line-height-md: 1.1;
+--line-height-lg: 1.5;
+--opacity-half: 0.5;
+--scale-pressed: 0.98;
+
+/* Gap sizes */
+--gap-xxs: 0.5rem;
+--gap-xs: 1.5rem;
+--gap-sm: 1.25rem;
+--gap-md: 5rem;
+
 /* Colors */
---dark--green: rgba(85, 107, 47, 1);
---light--green: rgba(166, 209, 92, 1);
---slightly--dark--green: rgba(127, 164, 63, 1);
+--dark-green: rgba(85, 107, 47, 1);
+--light-green: rgba(166, 209, 92, 1);
+--slightly-dark-green: rgba(127, 164, 63, 1);
 --white: rgba(255, 255, 255, 1);
 --yellow: rgba(255, 217, 0, 1);
 --dark-yellow: rgba(255, 215, 155, 0.5);
 --red: rgba(230, 57, 70, 1);
+--black: #000000;
+--cream: #f8efcf;
 
 /*Themes*/
---main-color: var(--dark--green);
+--main-color: var(--dark-green);
 --background-color: var(--dark-yellow);
---secondary-color: var(--light--green);
+--secondary-color: var(--light-green);
 --main-text-color: var(--white);
 --main-stroke-color: var(--yellow);
 --secondary-stroke-color: var(--red);
---button-pressed-color: var(--slightly--dark--green);
+--button-pressed-color: var(--slightly-dark-green);
+--logo-bg-color: var(--cream);
 }

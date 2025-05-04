@@ -3,27 +3,27 @@
 .chef-notes {
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
     border: var(--stroke-xs) solid var(--main-stroke-color);
-    border-radius: 3.5rem;
+    border-radius: var(--radius-xl);
     padding: var(--padding-xs) var(--padding-md);
     color: var(--main-text-color);
-    font-family: "Poppins", sans-serif;
-    font-size: var(--main-box--text);
+    font-family: var(--secondary-font);
+    font-size: var(--main-box-text);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 7.625rem;
-    width: 55.75rem;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    height: var(--height-xl);
+    width: var(--width-full-lg);
+    margin-top: var(--margin-lg);
+    margin-bottom: var(--margin-lg);
 }
 
 .add-button {
     background-color: var(--main-color);
     color: var(--main-text-color);
-    border-radius: 5rem;
-    padding: 5px 15px;
+    border-radius: var(--radius-xxl);
+    padding: var(--padding-xxs) var(--padding-xs);
     font-size: var(--button-text);
-    font-family: "Poppins", sans-serif;
-    width: 10.3125rem;
-    height: 3.75rem;
+    font-family: var(--secondary-font);
+    width: var(--width-sm);
+    height: var(--height-xxs);
 }

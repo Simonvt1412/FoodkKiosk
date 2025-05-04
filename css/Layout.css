@@ -1,20 +1,20 @@
 /* CSS for Pasta Pop-Up Layout */
 
 body {
-    font-family: "Oregano", "Arial", sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    align-items: center;
-    padding: var(--padding-sm) var(--padding-xs) var(--padding-lg);
-    box-sizing: border-box;
-  }
+  font-family: var(--primary-font);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: var(--margin-none) auto;
+  align-items: center;
+  padding: var(--padding-sm) var(--padding-xs) var(--padding-lg);
+  box-sizing: border-box;
+}
 
 .secondary-container {
-  margin-top: 10rem;
+margin-top: var(--margin-xxl);
 }

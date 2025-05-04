@@ -3,25 +3,25 @@
 .total-price {
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
     border: var(--stroke-sm) solid var(--main-stroke-color);
-    border-radius: 10rem;
+    border-radius: var(--radius-xxxl);
     padding: var(--padding-xs) var(--padding-md);
     color: var(--main-text-color);
-    font-family: "Poppins", sans-serif;
-    font-size: var(--main-box--text);
+    font-family: var(--secondary-font);
+    font-size: var(--main-box-text);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 11.75rem;
-    width: 59.375rem;
-    margin-top: 4rem;
+    height: var(--height-xxxl);
+    width: var(--width-full-xl);
+    margin-top: var(--margin-lg);
 }
 
 .back-arrow img {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: var(--icon-xs);
+    height: var(--icon-xs);
     background-color: var(--secondary-color);
-    border-radius: 50%;
-    padding: 8px;
+    border-radius: var(--radius-circle);
+    padding: var(--padding-xxs);
 }
 
 .total-text {
@@ -33,15 +33,15 @@
 .pay-button {
     background-color: var(--main-color);
     color: var(--main-text-color);
-    border-radius: 3rem;
-    padding: 8px 15px;
-    font-size: 1.5rem;
+    border-radius: var(--radius-md);
+    padding: var(--padding-xxs) var(--padding-xs);
+    font-size: var(--button-text);
     cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    width: 9.375rem;
-    height: 4.75rem;
+    font-family: var(--secondary-font);
+    width: var(--width-sm);
+    height: var(--height-sm);
 }
 
 .total-price-value {
-    font-size: var(--main-box--text);
+    font-size: var(--main-box-text);
 }

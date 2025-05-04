@@ -1,7 +1,7 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
+    gap: var(--gap-md);
 
     &:has(:nth-child(5):last-child) {
         > :last-child {

@@ -1,6 +1,6 @@
 /* CSS for Cart Items */
 .container-cart {
-    margin-top: -4rem;
+    margin-top: var(--margin-neg-lg);
     overflow: hidden;
     overflow-y: auto;
 }
@@ -8,17 +8,17 @@
 .cart-item {
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
     border: var(--stroke-xs) solid var(--main-stroke-color);
-    border-radius: 3.125rem;
+    border-radius: var(--radius-lg);
     padding: var(--padding-xs) var(--padding-md);
     color: var(--main-text-color);
-    font-family: "Poppins", sans-serif;
+    font-family: var(--secondary-font);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 10rem;
-    width: 55.75rem;
+    height: var(--height-xxl);
+    width: var(--width-full-lg);
     position: relative;
-    margin: 4rem;
+    margin: var(--margin-lg);
 }
 
 .item-name {
@@ -33,17 +33,17 @@
 
 .item-buttons {
     display: flex;
-    gap: var(--padding-xs);
+    gap: var(--gap-sm);
 }
 
 .edit-button, .delete-button {
     background-color: var(--secondary-color);
     color: var(--main-text-color);
-    border-radius: 3rem;
-    padding: 5px 10px;
+    border-radius: var(--radius-md);
+    padding: var(--padding-xxxs) var(--padding-xs);
     font-size: var(--button-text);
-    font-family: "Poppins", sans-serif;
+    font-family: var(--secondary-font);
     background-color: var(--main-color);
-    width: 11rem;
-    height: 4rem;
+    width: var(--width-md);
+    height: var(--height-xs);
 }

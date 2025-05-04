@@ -2,24 +2,24 @@
 
 /* Logo container styling */
 .logo-container {
-    width: 800px;
-    height: 800px;
-    background-color: #f8efcf;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    border: var(--stroke-xs) solid black;
-    margin: var(--padding-lg) auto;
-    margin-bottom: 12rem;
-  }
-  
-  /* Logo styling */
-  .logo {
-    width: 85%;
-    height: 85%;
-    object-fit: contain;
-    object-position: center;
-  }
+  width: var(--width-full-xxl);
+  height: var(--height-full-xxxl);
+  background-color: var(--logo-bg-color);
+  border-radius: var(--radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: var(--stroke-xs) solid var(--black);
+  margin: var(--padding-lg) auto;
+  margin-bottom: var(--margin-xxxl);
+}
+
+/* Logo styling */
+.logo {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  object-position: center;
+}
