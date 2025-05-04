@@ -4,6 +4,7 @@ body {
   font-family: var(--primary-font);
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .container {
