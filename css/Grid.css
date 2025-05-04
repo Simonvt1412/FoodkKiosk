@@ -1,0 +1,13 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+
+    &:has(:nth-child(5):last-child) {
+        > :last-child {
+            grid-column: 1 / -1;
+            justify-self: center;
+            max-width: 50%;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 .price-note {
     font-size: var(--bottom-text);
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 1rem;
+    left: 1rem;
     color: var(--main-color);
 }

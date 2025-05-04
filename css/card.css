@@ -15,8 +15,14 @@
     font-weight: 300;
 }
 
-.pasta-icon {
+.icon {
     width: 12.3125rem;
     height: 12.3125rem;
     padding-top: var(padding-xs);
+}
+
+.subtext {
+    font-size: var(--box-subtext);
+    align-self: flex-end;
+    padding-right: var(--padding-xs);
 }
