@@ -1,24 +1,24 @@
 .card {
     margin-top: var(--padding-sm);
-    width: 24.375rem;
-    height: 24.375rem;
-    font-size: var(--main-box--text);
+    width: var(--width-xxl);
+    height: var(--width-xxl);
+    font-size: var(--main-box-text);
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    font-family: "Poppins", Arial, sans-serif;
-    color: var(--white);
-    border-radius: 1rem;
+    font-family: var(--secondary-font);
+    color: var(--main-text-color);
+    border-radius: var(--radius-xs);
     border: var(--stroke-sm) solid var(--main-stroke-color);
     font-weight: 300;
 }
 
 .icon {
-    width: 12.3125rem;
-    height: 12.3125rem;
-    padding-top: var(padding-xs);
+    width: var(--width-lg);
+    height: var(--width-lg);
+    padding-top: var(--padding-xs);
 }
 
 .subtext {
