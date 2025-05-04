@@ -17,10 +17,13 @@ nav {
 .shopping-cart-svg {
     width: 7rem;
     height: 7rem;
-    margin-top: -8rem;
     background-color: var(--secondary-color);
     border-radius: 2rem 0 0 2rem;
     padding: 1rem;
     position: fixed;
     right: 0;
+    bottom: 3rem;
+    z-index: 100;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
