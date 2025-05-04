@@ -1,9 +1,9 @@
 /* CSS for Cart Items */
 .container-cart {
     margin-top: -4rem;
-    margin-bottom: 1rem;
+    overflow: hidden;
+    overflow-y: auto;
 }
-
 
 .cart-item {
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));

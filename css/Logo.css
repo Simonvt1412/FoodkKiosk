@@ -13,6 +13,7 @@
     overflow: hidden;
     border: var(--stroke-xs) solid black;
     margin: var(--padding-lg) auto;
+    margin-bottom: 12rem;
   }
   
   /* Logo styling */
