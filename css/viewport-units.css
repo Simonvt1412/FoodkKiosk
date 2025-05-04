@@ -1,0 +1,86 @@
+/* viewport-units.css - Add fluid sizing support */
+
+/* Set up fluid sizing using a combination of responsive units */
+:root {
+    /* Base font size (responsive) */
+    font-size: clamp(10px, 1vw, 16px);
+    
+    /* Adjust padding and sizes based on viewport */
+    --dynamic-padding-xxs: clamp(0.5rem, 1vw, 0.9375rem);
+    --dynamic-padding-xs: clamp(0.75rem, 1.5vw, 1.25rem);
+    --dynamic-padding-sm: clamp(1rem, 2vw, 2.5rem);
+    --dynamic-padding-md: clamp(1.5rem, 3vw, 3.125rem);
+    --dynamic-padding-lg: clamp(2rem, 3.5vw, 3.75rem);
+    
+    /* Dynamic width and height */
+    --container-width: min(90%, 1080px);
+    --card-width: min(45%, 24.375rem);
+    --icon-size: clamp(3rem, 10vw, 14.625rem);
+    
+    /* Dynamic size options */
+    --size-small-width: min(90%, 37.5rem);
+    --size-medium-width: min(90%, 46.875rem);
+    --size-large-width: min(90%, 54.375rem);
+  }
+  
+  /* Optimized container sizes */
+  .container {
+    width: var(--container-width);
+  }
+  
+  /* Fluid typography for better readability */
+  @media (min-width: 1921px) {
+    :root {
+      font-size: 18px;
+    }
+    
+    .title, .subtitle, .button {
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  /* Handle orientation changes */
+  @media (orientation: landscape) and (max-width: 992px) {
+    .size-options-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2vw;
+    }
+    
+    .size-option-small,
+    .size-option-medium,
+    .size-option-large {
+      width: 30%;
+      min-width: 200px;
+      max-width: 400px;
+    }
+  }
+  
+  /* Fluid vertical spacing */
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ensure content is centered on larger screens */
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1200px;
+    }
+  }
+  
+  /* Image responsiveness */
+  img {
+    max-width: 100%;
+    height: auto;
+  }

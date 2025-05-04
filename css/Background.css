@@ -24,3 +24,17 @@ body::before {
   z-index: -1;
   filter: blur(var(--blur-effect));
 }
+
+/* Responsive background adjustments */
+@media (max-width: 768px) {
+  body::before {
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+/* Prevent horizontal overflow on small screens */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
