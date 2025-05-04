@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--gap-md);
+    width: 100%;
+    max-width: 100%;
 
     &:has(:nth-child(5):last-child) {
         > :last-child {
@@ -9,5 +11,34 @@
             justify-self: center;
             max-width: 50%;
         }
+    }
+}
+
+/* Responsive grid layouts */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--gap-xs);
+        
+        &:has(:nth-child(5):last-child) {
+            > :last-child {
+                grid-column: 1;
+                max-width: 80%;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .grid {
+        gap: var(--gap-sm);
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 600px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap-xxs);
     }
 }

@@ -16,6 +16,9 @@
 @import "./ExtraItem.css";
 @import "./TotalPrice.css";
 @import "./Receipt.css";
+/* Import responsive styles */
+@import "./responsive.css";
+@import "./viewport-units.css";
 
 :root {
 /* Font Family */
