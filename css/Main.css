@@ -7,6 +7,9 @@
 @import "./Layout.css";
 @import "./SizeOptions.css";
 @import "./navigation.css";
+@import "./MainGrid.css";
+@import "./card.css";
+@import "./BottomText.css";
 
 :root {
 /* Font Sizez */

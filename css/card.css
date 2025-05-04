@@ -1,0 +1,19 @@
+.card {
+    width: 24.375rem;
+    height: 24.375rem;
+    font-size: var(--main-box--text);
+    background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", Arial, sans-serif;
+    color: var(--white);
+    border-radius: 1rem;
+    border: var(--stroke-sm) solid var(--main-stroke-color);
+}
+
+.pasta-icon {
+    width: 12.3125rem;
+    height: 12.3125rem;
+    padding-top: var(padding-xs);
+}
