@@ -14,3 +14,7 @@ body {
     padding: var(--padding-sm) var(--padding-xs) var(--padding-lg);
     box-sizing: border-box;
   }
+
+.secondary-container {
+  margin-top: 10rem;
+}
