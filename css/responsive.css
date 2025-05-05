@@ -1,0 +1,460 @@
+/* Improved Responsive Design with Container Queries */
+
+/* Enable container queries for modern browsers */
+@supports (container-type: inline-size) {
+    /* Root container settings */
+    .container {
+      container-type: inline-size;
+      container-name: main-container;
+      width: 100%;
+      max-width: 1080px; /* Preserve original design width */
+      margin: 0 auto;
+    }
+  
+    /* Secondary container context */
+    .secondary-container {
+      container-type: inline-size;
+      container-name: secondary-container;
+    }
+  
+    /* Tablet scaling for medium screens (768px - 1079px) */
+    @media screen and (max-width: 1079px) {
+      :root {
+        /* Scale font sizes proportionally but not too small */
+        --title: calc(9.375rem * 0.75);
+        --main-box-text: calc(3.125rem * 0.75);
+        --title-subtext: calc(6.25rem * 0.75);
+        --main-page-buttons-text: calc(4.6875rem * 0.75);
+        --small-box-text: calc(3.125rem * 0.75);
+        --medium-box-text: calc(3.75rem * 0.75);
+        --large-box-text: calc(4.375rem * 0.75);
+        --bottom-text: calc(4.6875rem * 0.75);
+        --box-subtext: calc(2.5rem * 0.75);
+        --button-text: calc(1.5625rem * 0.8); /* Keep buttons readable */
+        --receipt-text: calc(5.625rem * 0.75);
+        --title-secondary: calc(12.5rem * 0.75);
+        
+        /* Scale spacing proportionally but maintain hierarchy */
+        --padding-xs: calc(1.25rem * 0.8);
+        --padding-sm: calc(2.5rem * 0.8);
+        --padding-md: calc(3.125rem * 0.8);
+        --padding-lg: calc(3.75rem * 0.8);
+        --padding-xl: calc(6.875rem * 0.8);
+        
+        --margin-xs: calc(1rem * 0.8);
+        --margin-sm: calc(2rem * 0.8);
+        --margin-md: calc(3rem * 0.8);
+        --margin-lg: calc(4rem * 0.8);
+        --margin-xl: calc(5rem * 0.8);
+        --margin-xxl: calc(10rem * 0.75);
+        --margin-xxxl: calc(12rem * 0.75);
+        
+        /* Scale component sizes proportionally but maintain usability */
+        --width-xxl: calc(24.375rem * 0.75);
+        --width-xxxl: calc(31.25rem * 0.75);
+        --width-xxxxl: calc(37.5rem * 0.75);
+        --width-xxxxxl: calc(44.125rem * 0.75);
+        --width-full-sm: calc(46.875rem * 0.75);
+        --width-full-md: calc(54.375rem * 0.75);
+        --width-full-lg: calc(55.75rem * 0.75);
+        --width-full-xl: calc(59.375rem * 0.75);
+        --width-full-xxl: calc(800px * 0.75);
+        
+        --height-lg: calc(6.5625rem * 0.75);
+        --height-xl: calc(7.625rem * 0.75);
+        --height-xxl: calc(10rem * 0.75);
+        --height-xxxl: calc(11.75rem * 0.75);
+        --height-full-sm: calc(18.75rem * 0.75);
+        --height-full-md: calc(23.4375rem * 0.75);
+        --height-full-lg: calc(24.375rem * 0.75);
+        --height-full-xl: calc(28.125rem * 0.75);
+        --height-full-xxl: calc(44.125rem * 0.75);
+        --height-full-xxxl: calc(800px * 0.75);
+        
+        /* Adjust negative margins for better positioning */
+        --margin-neg-md: calc(-2rem * 0.75);
+        --margin-neg-lg: calc(-4rem * 0.75);
+        --margin-neg-xl: calc(-8rem * 0.75);
+        --margin-neg-xxl: calc(-13rem * 0.75);
+        --margin-neg-xxxl: calc(-15rem * 0.75);
+      }
+      
+      /* Maintain original two-column grid for tablets */
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 var(--padding-sm);
+      }
+      
+      /* Adjust logo for tablet */
+      .logo-container {
+        width: calc(var(--width-full-xxl) * 0.85);
+        height: calc(var(--height-full-xxxl) * 0.85);
+        margin-bottom: var(--margin-xxl);
+      }
+      
+      /* Navigation adjustments for tablet */
+      nav {
+        margin-bottom: calc(var(--margin-neg-xxl) * 0.85);
+        width: 100%;
+        padding: 0 var(--padding-xs);
+      }
+      
+      /* Adjust size options container for tablet */
+      .size-options-container {
+        margin-top: calc(var(--margin-neg-xxxl) * 0.85);
+      }
+      
+      /* Fix overflow issues */
+      body {
+        overflow-y: auto;
+      }
+      
+      /* Make sure container has appropriate overflow behavior */
+      .container {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    }
+  
+    /* Mobile layout adjustments (767px and below) */
+    @media screen and (max-width: 767px) {
+      :root {
+        /* Further scale down for mobile but ensure readability */
+        --title: calc(9.375rem * 0.45);
+        --main-box-text: calc(3.125rem * 0.5);
+        --title-subtext: calc(6.25rem * 0.45);
+        --main-page-buttons-text: calc(4.6875rem * 0.5);
+        --small-box-text: calc(3.125rem * 0.5);
+        --medium-box-text: calc(3.75rem * 0.5);
+        --large-box-text: calc(4.375rem * 0.5);
+        --bottom-text: calc(4.6875rem * 0.5);
+        --box-subtext: calc(2.5rem * 0.5);
+        --button-text: calc(1.5625rem * 0.6); /* Keep buttons usable */
+        --receipt-text: calc(5.625rem * 0.5);
+        --title-secondary: calc(12.5rem * 0.45);
+        
+        /* Mobile spacing - reduce but keep usable */
+        --padding-xs: calc(1.25rem * 0.6);
+        --padding-sm: calc(2.5rem * 0.55);
+        --padding-md: calc(3.125rem * 0.5);
+        --padding-lg: calc(3.75rem * 0.5);
+        --padding-xl: calc(6.875rem * 0.45);
+        
+        --margin-xs: calc(1rem * 0.6);
+        --margin-sm: calc(2rem * 0.6);
+        --margin-md: calc(3rem * 0.55);
+        --margin-lg: calc(4rem * 0.5);
+        --margin-xl: calc(5rem * 0.45);
+        --margin-xxl: calc(10rem * 0.45);
+        --margin-xxxl: calc(12rem * 0.45);
+        
+        /* Mobile component sizes - use percentages for better flexible sizing */
+        /* Adjust negative margins for better positioning */
+        --margin-neg-md: calc(-2rem * 0.5);
+        --margin-neg-lg: calc(-4rem * 0.5);
+        --margin-neg-xl: calc(-8rem * 0.5);
+        --margin-neg-xxl: calc(-13rem * 0.45);
+        --margin-neg-xxxl: calc(-15rem * 0.45);
+      }
+      
+      /* Switch Grid to single column for mobile */
+      .grid {
+        grid-template-columns: 1fr;
+        padding: 0 var(--padding-xs);
+        gap: var(--gap-xs);
+      }
+      
+      /* Center all grid items */
+      .grid > * {
+        justify-self: center;
+        width: 90% !important; /* Override fixed widths */
+        max-width: 400px; /* Set maximum width for readability */
+      }
+      
+      /* Fix body scrolling */
+      body {
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-bottom: var(--padding-lg);
+      }
+      
+      /* Adjust spacing for mobile-first layout */
+      .container {
+        padding: var(--padding-xs);
+        overflow-x: hidden;
+        overflow-y: visible;
+        width: 100%;
+      }
+      
+      /* Fix title alignment and spacing */
+      .title {
+        margin-bottom: var(--margin-xs);
+        padding: 0 var(--padding-xs);
+      }
+      
+      .subtitle {
+        margin-bottom: var(--margin-sm);
+        padding: 0 var(--padding-xs);
+      }
+    }
+  }
+  
+  /* Component-specific container queries */
+  
+  /* Logo Component */
+  @container main-container (max-width: 767px) {
+    .logo-container {
+      width: 90%;
+      max-width: 300px;
+      height: auto;
+      aspect-ratio: 1/1; /* Maintain circular shape */
+      margin: var(--margin-lg) auto var(--margin-lg);
+    }
+    
+    header {
+      margin-top: var(--padding-sm);
+    }
+  }
+  
+  /* Title Component */
+  @container main-container (max-width: 767px) {
+    .title {
+      margin-bottom: var(--margin-xs);
+    }
+    
+    .subtitle {
+      margin-bottom: var(--margin-sm);
+    }
+  }
+  
+  /* Size Options Component */
+  @container main-container (max-width: 767px) {
+    .size-options-container {
+      gap: var(--gap-sm);
+      margin-top: -4rem; /* Better positioning for mobile */
+      padding: 0 var(--padding-xs);
+      min-height: auto; /* Don't force 100vh on mobile */
+    }
+    
+    .size-option-small, 
+    .size-option-medium, 
+    .size-option-large {
+      width: 90%; /* Use percentage for better mobile scaling */
+      margin: 0 auto var(--margin-sm);
+      height: auto; /* Let height be determined by content */
+      padding: var(--padding-sm) var(--padding-xs);
+      min-height: 120px; /* Ensure minimum height */
+    }
+    
+    /* Fix icon sizes to match container */
+    .size-icon-small,
+    .size-icon-medium,
+    .size-icon-large {
+      width: auto;
+      height: auto;
+      max-width: 40%; /* Size proportionally to container */
+      max-height: 60px;
+      padding: var(--padding-xs) 0;
+    }
+    
+    /* Fix spacing and size of text */
+    .size-name-small,
+    .size-name-medium,
+    .size-name-large,
+    .size-price-small,
+    .size-price-medium,
+    .size-price-large {
+      margin-bottom: 0;
+      padding: var(--padding-xxs);
+    }
+  }
+  
+  /* Cart Items Component */
+  @container main-container (max-width: 767px) {
+    .cart-item {
+      width: 90%;
+      max-width: 400px;
+      margin: var(--margin-sm) auto;
+      padding: var(--padding-xs);
+      height: auto; /* Let height adjust to content */
+      min-height: var(--height-lg);
+    }
+    
+    .container-cart {
+      margin-top: var(--margin-lg); /* Fix negative margin issues */
+      width: 100%;
+      padding: 0 var(--padding-xs);
+    }
+    
+    .item-name,
+    .item-price {
+      font-size: calc(var(--medium-box-text) * 0.9);
+    }
+    
+    .item-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-xxs);
+    }
+  }
+  
+  /* Chef Notes Component */
+  @container main-container (max-width: 767px) {
+    .chef-notes {
+      width: 90%;
+      max-width: 400px;
+      margin: var(--margin-md) auto;
+      height: auto; /* Let height adjust to content */
+      min-height: var(--height-lg);
+      padding: var(--padding-xs);
+    }
+  }
+  
+  /* Buttons Component */
+  @container main-container (max-width: 767px) {
+    .buttons-container {
+      flex-direction: column;
+      gap: var(--gap-xs);
+      width: 100%;
+      padding: var(--padding-xs);
+      margin-top: var(--margin-md);
+      margin-bottom: var(--margin-md);
+    }
+    
+    .button {
+      width: 90%;
+      max-width: 300px;
+      height: auto;
+      min-height: var(--height-lg);
+      padding: var(--padding-xs);
+      margin: 0 auto;
+    }
+  }
+  
+  /* Receipt Component */
+  @container main-container (max-width: 767px) {
+    .receipt-container {
+      width: 90%;
+      max-width: 350px;
+      height: auto; /* Allow height to adjust based on content */
+      padding: var(--padding-md) var(--padding-xs);
+      margin: var(--margin-md) auto;
+    }
+    
+    .receipt-icon {
+      width: 50%;
+      height: auto;
+      max-width: 120px;
+    }
+    
+    .receipt-text {
+      text-align: center;
+      padding: var(--padding-xs);
+    }
+    
+    .title--secondary {
+      margin-top: var(--margin-lg);
+      margin-bottom: var(--margin-lg);
+      text-align: center;
+    }
+  }
+  
+  /* Total Price Component */
+  @container main-container (max-width: 767px) {
+    .total-price {
+      width: 90%;
+      max-width: 350px;
+      height: auto;
+      min-height: var(--height-xxl);
+      padding: var(--padding-xs);
+      flex-direction: column;
+      margin: var(--margin-md) auto;
+    }
+    
+    .total-text {
+      width: 100%;
+      margin-bottom: var(--margin-xs);
+      text-align: center;
+    }
+    
+    .total-price-value {
+      margin: var(--margin-xs) 0;
+    }
+    
+    .pay-button {
+      margin-top: var(--margin-xs);
+      width: 80%;
+      height: auto;
+      padding: var(--padding-xs);
+    }
+    
+    .back-arrow img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* Navigation Component */
+  @container main-container (max-width: 767px) {
+    nav {
+      width: 100%;
+      margin: 0;
+      padding: var(--padding-xs);
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+    }
+    
+    .back-button-svg, 
+    .home-button-svg {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: var(--padding-xxs);
+    }
+    
+    .shopping-cart-svg {
+      width: 3.5rem;
+      height: 3.5rem;
+      padding: 0.5rem;
+      bottom: 1.5rem;
+    }
+  }
+  
+  /* Extra Item Component */
+  @container main-container (max-width: 767px) {
+    .extra-item {
+      width: 90%;
+      max-width: 350px;
+      height: auto;
+      min-height: var(--height-md);
+      padding: var(--padding-xs);
+      margin: var(--margin-xs) auto;
+    }
+    
+    .extra-item-text {
+      font-size: calc(var(--box-subtext) * 0.9);
+    }
+  }
+  
+  /* Card Component */
+  @container main-container (max-width: 767px) {
+    .card {
+      width: 90%;
+      max-width: 200px;
+      height: auto;
+      aspect-ratio: 1/1; /* Maintain square shape */
+      margin: var(--margin-xs) auto;
+      padding: var(--padding-xs);
+    }
+    
+    .icon {
+      width: 40%;
+      height: auto;
+      padding-top: var(--padding-xxs);
+    }
+    
+    .subtext {
+      padding-right: var(--padding-xxs);
+      padding-bottom: var(--padding-xxs);
+    }
+  }
