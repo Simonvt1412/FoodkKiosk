@@ -1,0 +1,136 @@
+/* Additional Media Queries for Pasta Pop-Up 
+   Include this file in Main.css with:
+   @import "./MediaQueries.css";
+*/
+  
+  /* Responsive scaling for medium to large screens */
+  @media screen and (min-width: 769px) and (max-width: 1080px) {
+    :root {
+      --scale-factor: calc(100vw / 1080);
+    }
+    
+    /* Proportional adjustments */
+    .logo-container {
+      margin-bottom: calc(var(--margin-xxxl) * 0.8);
+    }
+    
+    /* Maintain proper button spacing */
+    .buttons-container {
+      gap: clamp(20px, var(--gap-md), 40px);
+    }
+  }
+  
+  /* Tablet sizing */
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    :root {
+      --scale-factor: calc(100vw / 1080);
+    }
+    
+    /* Optimize for touch targets on tablets */
+    .button {
+      min-height: 60px;
+    }
+    
+    /* Adjust vertical spacing for tablets */
+    .logo-container {
+      margin-top: clamp(20px, var(--margin-md), 40px);
+      margin-bottom: clamp(32px, var(--margin-xxl), 64px);
+    }
+  }
+  
+  /* Mobile sizing */
+  @media screen and (max-width: 480px) {
+    :root {
+      --scale-factor: calc(100vw / 1080);
+    }
+    
+    /* Stack buttons on small screens */
+    .buttons-container {
+      flex-direction: column;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .button {
+      width: 100%;
+      margin-bottom: clamp(12px, var(--margin-sm), 24px);
+      min-height: 55px;
+    }
+    
+    /* Adjust vertical spacing for mobile */
+    .logo-container {
+      margin-top: clamp(12px, var(--margin-sm), 24px);
+      margin-bottom: clamp(24px, var(--margin-lg), 36px);
+    }
+    
+    header {
+      margin-top: clamp(12px, var(--padding-xs), 18px);
+    }
+    
+    .title {
+      font-size: clamp(32px, var(--title), 18vw);
+    }
+    
+    .subtitle {
+      font-size: clamp(24px, var(--title-subtext), 12vw);
+    }
+  }
+  
+  /* Landscape orientation on mobile */
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    .container {
+      padding-top: clamp(8px, var(--padding-xs), 12px);
+      padding-bottom: clamp(16px, var(--padding-md), 24px);
+    }
+    
+    .logo-container {
+      margin-top: clamp(8px, var(--margin-xs), 12px);
+      margin-bottom: clamp(16px, var(--margin-md), 24px);
+      max-height: 30vh;
+      max-width: 30vh;
+    }
+    
+    .buttons-container {
+      flex-direction: row;
+      gap: clamp(12px, var(--gap-sm), 20px);
+    }
+    
+    .title {
+      font-size: clamp(28px, var(--title), 10vw);
+      margin-bottom: clamp(4px, var(--margin-xxs), 8px);
+    }
+    
+    .subtitle {
+      font-size: clamp(20px, var(--title-subtext), 7vw);
+      margin-bottom: clamp(8px, var(--margin-xs), 12px);
+    }
+    
+    header {
+      margin-top: clamp(8px, var(--padding-xxs), 12px);
+    }
+  }
+  
+  /* Fix for mobile Safari viewport height */
+  @supports (-webkit-touch-callout: none) {
+    .container {
+      min-height: -webkit-fill-available;
+    }
+    
+    body {
+      min-height: -webkit-fill-available;
+    }
+  }
+  
+  /* High pixel density screens */
+  @media (-webkit-min-device-pixel-ratio: 2), 
+         (min-resolution: 192dpi) {
+    /* Ensure border widths are visible but not too thick */
+    .logo-container {
+      border-width: min(var(--stroke-xs), 3px);
+    }
+    
+    .button {
+      border-width: min(var(--stroke-sm), 4px);
+    }
+  }

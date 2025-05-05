@@ -1,4 +1,4 @@
-/* CSS for Pasta Pop-Up Title and Subtitle */
+/* CSS for Pasta Pop-Up Title and Subtitle - Enhanced for Responsiveness */
 
 .title {
     font-family: var(--primary-font);
@@ -8,6 +8,9 @@
     margin-bottom: var(--padding-xxs);
     line-height: var(--line-height-sm);
     margin-bottom: var(--margin-md);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 .subtitle {
@@ -17,6 +20,9 @@
     color: var(--main-color);
     line-height: var(--line-height-md);
     margin-bottom: var(--margin-md);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 header {
@@ -24,4 +30,56 @@ header {
     flex-direction: column;
     align-items: center;
     margin-top: var(--padding-lg);
+    width: 100%;
+}
+
+/* Responsive title adjustments */
+@media (max-width: 1080px) {
+    .title {
+        font-size: min(var(--title), 15vw);
+        margin-bottom: min(var(--margin-md), 5vw);
+    }
+    
+    .subtitle {
+        font-size: min(var(--title-subtext), 10vw);
+        margin-bottom: min(var(--margin-md), 5vw);
+    }
+    
+    header {
+        margin-top: min(var(--padding-lg), 8vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: min(var(--title), 18vw);
+        line-height: 0.9;
+        margin-bottom: min(var(--margin-sm), 3vw);
+    }
+    
+    .subtitle {
+        font-size: min(var(--title-subtext), 12vw);
+        line-height: 1;
+        margin-bottom: min(var(--margin-sm), 4vw);
+    }
+    
+    header {
+        margin-top: min(var(--padding-md), 6vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: min(var(--title), 20vw);
+        margin-bottom: min(var(--margin-xs), 2vw);
+    }
+    
+    .subtitle {
+        font-size: min(var(--title-subtext), 14vw);
+        margin-bottom: min(var(--margin-sm), 3vw);
+    }
+    
+    header {
+        margin-top: min(var(--padding-sm), 4vw);
+    }
 }

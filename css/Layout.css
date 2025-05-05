@@ -1,8 +1,10 @@
-/* CSS for Pasta Pop-Up Layout */
+/* CSS for Pasta Pop-Up Layout - Responsive Version */
 
 body {
   font-family: var(--primary-font);
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .container {
@@ -12,8 +14,49 @@ body {
   align-items: center;
   padding: var(--padding-sm) var(--padding-xs) var(--padding-lg);
   box-sizing: border-box;
+  width: 100%;
+  max-width: 1080px;
+  min-height: 100vh;
 }
 
 .secondary-container {
-margin-top: var(--margin-xxl);
+  margin-top: var(--margin-xxl);
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1080px) {
+  .container {
+    padding-left: max(var(--padding-xs), 16px);
+    padding-right: max(var(--padding-xs), 16px);
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-top: max(var(--padding-sm), 16px);
+    padding-bottom: max(var(--padding-lg), 24px);
+  }
+  
+  .secondary-container {
+    margin-top: calc(var(--margin-xxl) * 0.7);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .container {
+    padding-top: max(var(--padding-xs), 12px);
+    padding-bottom: max(var(--padding-md), 16px);
+    justify-content: space-between;
+  }
+  
+  header {
+    margin-top: max(var(--padding-xs), 12px);
+  }
+  
+  .secondary-container {
+    margin-top: calc(var(--margin-xl) * 0.7);
+  }
 }

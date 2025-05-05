@@ -17,6 +17,7 @@
 @import "./TotalPrice.css";
 @import "./Receipt.css";
 @import "./responsive.css";
+@import "./MediaQueries.css";
 
 :root {
 /* Font Family */

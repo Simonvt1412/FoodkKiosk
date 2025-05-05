@@ -1,9 +1,11 @@
-/* CSS for Pasta Pop-Up Logo Only */
+/* CSS for Pasta Pop-Up Logo Only - Enhanced for Responsiveness */
 
 /* Logo container styling */
 .logo-container {
   width: var(--width-full-xxl);
   height: var(--height-full-xxxl);
+  max-width: min(800px, 90vw);
+  max-height: min(800px, 90vw);
   background-color: var(--logo-bg-color);
   border-radius: var(--radius-circle);
   display: flex;
@@ -14,6 +16,7 @@
   border: var(--stroke-xs) solid var(--black);
   margin: var(--padding-lg) auto;
   margin-bottom: var(--margin-xxxl);
+  aspect-ratio: 1 / 1;
 }
 
 /* Logo styling */
@@ -22,4 +25,25 @@
   height: 85%;
   object-fit: contain;
   object-position: center;
+}
+
+/* Responsive logo adjustments */
+@media (max-width: 1080px) {
+  .logo-container {
+    margin-bottom: calc(var(--margin-xxxl) * 0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-container {
+    margin-bottom: calc(var(--margin-xxl) * 0.8);
+    border-width: min(var(--stroke-xs), 4px);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container {
+    margin-top: max(1rem, var(--margin-xs));
+    margin-bottom: max(2rem, var(--margin-lg));
+  }
 }

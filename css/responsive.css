@@ -1,32 +1,12 @@
-/* Enhanced Responsive Design with Container Queries */
+/* Responsive CSS for Pasta Pop-Up - to be added to responsive.css */
 
-/* Base container settings - enable container queries */
-.container {
-    container-type: inline-size;
-    container-name: main-container;
-    width: 100%;
-    max-width: 1080px; /* Original design width */
-    margin: 0 auto;
-    overflow-x: hidden;
-  }
-  
-  .secondary-container {
-    container-type: inline-size;
-    container-name: secondary-container;
-    width: 100%;
-  }
-  
-  /* ===== RESPONSIVE SCALING ===== */
-  /* This section preserves the original design at 1080px width and scales proportionally for smaller screens */
-  
-  /* Establish consistent scale factors based on container width */
-  @container main-container (width < 1080px) {
-    /* Dynamic scaling formula based on container width */
+/* Root level media queries to handle different screen sizes */
+@media screen and (max-width: 1080px) {
     :root {
-      /* Scale factor calculation: smoothly scales from 0.4 at smallest to 1 at 1080px */
-      --scale-factor: clamp(0.4, calc(100cqw / 1080), 1);
+      /* Base scale factor - adjusts based on viewport width */
+      --scale-factor: clamp(0.4, calc(100vw / 1080), 1);
       
-      /* Dynamically scaled font sizes */
+      /* Apply scale factor to all size variables */
       --title: calc(9.375rem * var(--scale-factor));
       --main-box-text: calc(3.125rem * var(--scale-factor));
       --title-subtext: calc(6.25rem * var(--scale-factor));
@@ -40,13 +20,12 @@
       --receipt-text: calc(5.625rem * var(--scale-factor));
       --title-secondary: calc(12.5rem * var(--scale-factor));
       
-      /* Stroke sizes */
+      /* Adjust all other size variables */
       --stroke-xs: calc(0.5rem * var(--scale-factor));
       --stroke-sm: calc(0.625rem * var(--scale-factor));
       --stroke-md: calc(0.75rem * var(--scale-factor));
       --stroke-lg: calc(0.875rem * var(--scale-factor));
       
-      /* Padding sizes */
       --padding-xxs: calc(0.9375rem * var(--scale-factor));
       --padding-xs: calc(1.25rem * var(--scale-factor));
       --padding-sm: calc(2.5rem * var(--scale-factor));
@@ -57,7 +36,6 @@
       --padding-xxxl: calc(18.75rem * var(--scale-factor));
       --padding-xxxxl: calc(20rem * var(--scale-factor));
       
-      /* Margin sizes */
       --margin-xxs: calc(0.5rem * var(--scale-factor));
       --margin-xs: calc(1rem * var(--scale-factor));
       --margin-sm: calc(2rem * var(--scale-factor));
@@ -72,7 +50,6 @@
       --margin-neg-xxl: calc(-13rem * var(--scale-factor));
       --margin-neg-xxxl: calc(-15rem * var(--scale-factor));
       
-      /* Widths */
       --width-xxs: calc(7rem * var(--scale-factor));
       --width-xs: calc(9.375rem * var(--scale-factor));
       --width-sm: calc(10.3125rem * var(--scale-factor));
@@ -89,7 +66,6 @@
       --width-full-xl: calc(59.375rem * var(--scale-factor));
       --width-full-xxl: calc(800px * var(--scale-factor));
       
-      /* Heights */
       --height-xxs: calc(3.75rem * var(--scale-factor));
       --height-xs: calc(4rem * var(--scale-factor));
       --height-sm: calc(4.75rem * var(--scale-factor));
@@ -105,7 +81,6 @@
       --height-full-xxl: calc(44.125rem * var(--scale-factor));
       --height-full-xxxl: calc(800px * var(--scale-factor));
       
-      /* Border Radius */
       --radius-xs: calc(1rem * var(--scale-factor));
       --radius-sm: calc(2rem * var(--scale-factor));
       --radius-md: calc(3rem * var(--scale-factor));
@@ -114,7 +89,6 @@
       --radius-xxl: calc(5rem * var(--scale-factor));
       --radius-xxxl: calc(10rem * var(--scale-factor));
       
-      /* Misc Sizes */
       --icon-xs: calc(6.25rem * var(--scale-factor));
       --icon-sm: calc(7.6875rem * var(--scale-factor));
       --icon-md: calc(10.625rem * var(--scale-factor));
@@ -123,7 +97,6 @@
       --svg-icon-sm: calc(7rem * var(--scale-factor));
       --blur-effect: calc(10px * var(--scale-factor));
       
-      /* Gap sizes */
       --gap-xxs: calc(0.5rem * var(--scale-factor));
       --gap-xs: calc(1.5rem * var(--scale-factor));
       --gap-sm: calc(1.25rem * var(--scale-factor));
@@ -131,474 +104,93 @@
     }
   }
   
-  /* ===== COMPONENT SPECIFIC ADJUSTMENTS ===== */
-  
-  /* Logo Component */
-  @container main-container (width < 1080px) {
-    .logo-container {
-      width: calc(var(--width-full-xxl));
-      height: calc(var(--height-full-xxxl));
-      margin-bottom: var(--margin-xxxl);
-    }
+  /* Additional base styles to improve responsiveness */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
   }
   
-  /* Title Component */
-  @container main-container (width < 1080px) {
-    .title {
-      font-size: var(--title);
-      margin-bottom: var(--margin-md);
-      line-height: 1; /* Ensure consistent line height on smaller screens */
-    }
-    
-    .subtitle {
-      font-size: var(--title-subtext);
-      margin-bottom: var(--margin-md);
-      line-height: 1.1; /* Ensure consistent line heights */
-    }
-    
-    header {
-      margin-top: var(--padding-lg);
-    }
+  .container {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
   }
   
-  /* Buttons Component */
-  @container main-container (width < 1080px) {
+  /* Better responsive sizing for logo container */
+  .logo-container {
+    width: min(800px, 90vw);
+    height: min(800px, 90vw);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Improved button layout for small screens */
+  @media screen and (max-width: 767px) {
     .buttons-container {
-      margin-bottom: var(--padding-lg);
-      padding: 0 var(--padding-md);
-      gap: var(--gap-md);
-      flex-wrap: wrap; /* Allow wrapping on very small screens */
-      justify-content: center;
+      flex-direction: column;
+      width: 100%;
     }
     
     .button {
-      font-size: var(--main-page-buttons-text);
-      border: var(--stroke-sm) solid var(--main-stroke-color);
-      border-radius: var(--radius-md);
-      width: var(--width-full-sm);
-      height: var(--height-xxl);
-      padding: var(--padding-xxs);
-      min-width: min-content; /* Prevent button from becoming too small */
-    }
-  }
-  
-  /* Size Options Component */
-  @container main-container (width < 1080px) {
-    .size-options-container {
-      gap: var(--gap-xs);
-      margin-top: var(--margin-neg-xxxl);
-      padding: 0 var(--padding-xs); /* Add horizontal padding for small screens */
-    }
-    
-    .size-option-small {
-      margin-bottom: var(--padding-xl);
-      width: var(--width-xxxxl);
-      height: var(--height-full-sm);
-      border-radius: var(--radius-sm);
-      border: var(--stroke-sm) solid var(--main-stroke-color);
-      max-width: 100%; /* Ensure it doesn't overflow container */
-    }
-    
-    .size-icon-small {
-      margin-top: var(--padding-xs);
-      width: var(--icon-sm);
-      padding-top: calc(20px * var(--scale-factor));
-      padding-bottom: var(--padding-xs);
-    }
-    
-    .size-price, .size-name {
-      font-size: var(--small-box-text);
-    }
-    
-    .size-option-medium {
-      width: var(--width-full-sm);
-      height: var(--height-full-md);
-      border-radius: var(--radius-sm);
-      border: var(--stroke-sm) solid var(--main-stroke-color);
-      margin-bottom: var(--padding-xl);
-      max-width: 100%; /* Ensure it doesn't overflow container */
-    }
-    
-    .size-icon-medium {
-      width: var(--icon-md);
-      padding-top: var(--padding-sm);
-      padding-bottom: var(--padding-lg);
-    }
-    
-    .size-option-large {
-      width: var(--width-full-md);
-      height: var(--height-full-xl);
-      border-radius: var(--radius-sm);
-      border: var(--stroke-sm) solid var(--main-stroke-color);
-      max-width: 100%; /* Ensure it doesn't overflow container */
-    }
-    
-    .size-icon-large {
-      width: var(--icon-lg);
-      padding-top: var(--padding-md);
-      padding-bottom: var(--padding-lg);
-    }
-    
-    .size-name-small, .size-price-small {
-      font-size: var(--small-box-text);
-    }
-    
-    .size-name-medium, .size-price-medium {
-      font-size: var(--medium-box-text);
-    }
-    
-    .size-name-large, .size-price-large {
-      font-size: var(--large-box-text);
-    }
-  }
-  
-  /* Grid Component */
-  @container main-container (width < 1080px) {
-    .grid {
-      gap: var(--gap-md);
-      padding: 0 var(--padding-xs); /* Add horizontal padding for small screens */
-    }
-    
-    /* Fixed layout for 5 items */
-    .grid:has(:nth-child(5):last-child) > :last-child {
-      grid-column: 1 / -1;
-      justify-self: center;
-      max-width: 50%;
-    }
-  }
-  
-  /* Card Component */
-  @container main-container (width < 1080px) {
-    .card {
-      margin-top: var(--padding-sm);
-      width: var(--width-xxl);
-      height: var(--width-xxl);
-      font-size: var(--main-box-text);
-      border-radius: var(--radius-xs);
-      border: var(--stroke-sm) solid var(--main-stroke-color);
-      max-width: 100%; /* Ensure it doesn't overflow container */
-    }
-    
-    .icon {
-      width: var(--width-lg);
-      height: var(--width-lg);
-      padding-top: var(--padding-xs);
-    }
-    
-    .subtext {
-      font-size: var(--box-subtext);
-      padding-right: var(--padding-xs);
-    }
-  }
-  
-  /* Navigation Component */
-  @container main-container (width < 1080px) {
-    nav {
-      margin-bottom: var(--margin-neg-xxl);
-      padding: 0 var(--padding-xxs); /* Add horizontal padding */
-      width: 100%;
-    }
-    
-    .back-button-svg, .home-button-svg {
-      width: var(--svg-icon-sm);
-      height: var(--svg-icon-sm);
-      padding: var(--padding-xxs);
-      margin: var(--padding-sm);
-    }
-    
-    .shopping-cart-svg {
-      width: var(--svg-icon-sm);
-      height: var(--svg-icon-sm);
-      padding: var(--padding-xs);
-      bottom: calc(3rem * var(--scale-factor));
-    }
-  }
-  
-  /* Cart Item Component */
-  @container main-container (width < 1080px) {
-    .container-cart {
-      margin-top: var(--margin-neg-lg);
-      width: 100%;
-      padding: 0 var(--padding-xs); /* Add horizontal padding */
-    }
-    
-    .cart-item {
-      border: var(--stroke-xs) solid var(--main-stroke-color);
-      border-radius: var(--radius-lg);
-      padding: var(--padding-xs) var(--padding-md);
-      height: var(--height-xxl);
-      width: var(--width-full-lg);
-      margin: var(--margin-lg) auto; /* Center items */
-      max-width: 100%; /* Ensure it doesn't overflow container */
-    }
-    
-    .item-name {
-      font-size: var(--medium-box-text);
-      flex: 1;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
-    
-    .item-price {
-      margin-right: var(--padding-md);
-      font-size: var(--box-subtext);
-      white-space: nowrap;
-    }
-    
-    .item-buttons {
-      gap: var(--gap-sm);
-      display: flex;
-    }
-    
-    .edit-button, .delete-button {
-      border-radius: var(--radius-md);
-      padding: var(--padding-xxxs) var(--padding-xs);
-      font-size: var(--button-text);
-      width: var(--width-md);
-      height: var(--height-xs);
-      min-width: min-content; /* Prevent buttons from becoming too small */
-    }
-  }
-  
-  /* Chef Notes Component */
-  @container main-container (width < 1080px) {
-    .chef-notes {
-      border: var(--stroke-xs) solid var(--main-stroke-color);
-      border-radius: var(--radius-xl);
-      padding: var(--padding-xs) var(--padding-md);
-      font-size: var(--main-box-text);
-      height: var(--height-xl);
-      width: var(--width-full-lg);
-      margin: var(--margin-lg) auto; /* Center notes */
-      max-width: calc(100% - var(--padding-md) * 2); /* Ensure it doesn't overflow container */
-    }
-    
-    .add-button {
-      border-radius: var(--radius-xxl);
-      padding: var(--padding-xxs) var(--padding-xs);
-      font-size: var(--button-text);
-      width: var(--width-sm);
-      height: var(--height-xxs);
-      min-width: min-content; /* Prevent button from becoming too small */
-    }
-  }
-  
-  /* Extra Item Component */
-  @container main-container (width < 1080px) {
-    .extra-item {
-      border: var(--stroke-xs) solid var(--main-stroke-color);
-      border-radius: var(--radius-xl);
-      padding: var(--padding-md) var(--padding-sm);
-      font-size: var(--main-box-text);
-      height: var(--height-lg);
-      width: var(--width-xxxl);
-      max-width: 100%; /* Ensure it doesn't overflow container */
-      margin: 0 auto; /* Center item */
-    }
-    
-    .extra-item-text {
-      font-size: var(--box-subtext);
-      margin-right: var(--padding-xs);
-    }
-  }
-  
-  /* Total Price Component */
-  @container main-container (width < 1080px) {
-    .total-price {
-      border: var(--stroke-sm) solid var(--main-stroke-color);
-      border-radius: var(--radius-xxxl);
-      padding: var(--padding-xs) var(--padding-md);
-      font-size: var(--main-box-text);
-      height: var(--height-xxxl);
-      width: var(--width-full-xl);
-      margin: var(--margin-lg) auto; /* Center price */
-      max-width: calc(100% - var(--padding-md) * 2); /* Ensure it doesn't overflow container */
-    }
-    
-    .back-arrow img {
-      width: var(--icon-xs);
-      height: var(--icon-xs);
-      padding: var(--padding-xxs);
-    }
-    
-    .total-text {
-      font-size: var(--medium-box-text);
-      text-align: center;
-      flex-grow: 1;
-    }
-    
-    .pay-button {
-      border-radius: var(--radius-md);
-      padding: var(--padding-xxs) var(--padding-xs);
-      font-size: var(--button-text);
-      width: var(--width-sm);
-      height: var(--height-sm);
-      min-width: min-content; /* Prevent button from becoming too small */
-    }
-    
-    .total-price-value {
-      font-size: var(--main-box-text);
-    }
-  }
-  
-  /* Receipt Component */
-  @container main-container (width < 1080px) {
-    .receipt-container {
-      width: var(--width-xxxxxl);
-      height: var(--height-full-xxl);
-      border-radius: var(--radius-sm);
-      border: solid var(--main-stroke-color) var(--stroke-lg);
-      max-width: calc(100% - var(--padding-md) * 2); /* Ensure it doesn't overflow container */
-      margin: 0 auto; /* Center receipt */
-    }
-    
-    .receipt-icon {
-      width: var(--icon-xl);
-      height: var(--icon-xl);
-      max-width: 100%; /* Ensure icon doesn't overflow container */
-    }
-    
-    .receipt-text {
-      font-size: var(--receipt-text);
+      width: 100% !important;
       margin-bottom: var(--margin-md);
-      text-align: center;
-      padding: 0 var(--padding-xs);
+      min-height: 60px;
     }
     
-    .title--secondary {
-      margin-top: var(--margin-xxl);
-      margin-bottom: var(--margin-xxl);
-      font-size: var(--title-secondary);
-      text-align: center;
+    .title {
+      font-size: min(9.375rem, 15vw);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      font-size: min(6.25rem, 10vw);
+      line-height: 1.1;
     }
   }
   
-  /* ===== SCREEN SIZE SPECIFIC LAYOUT CHANGES ===== */
-  
-  /* Layout adaptations for very small screens */
-  @container main-container (width < 400px) {
-    /* Force single column grid for very small screens */
-    .grid {
-      grid-template-columns: 1fr !important;
-    }
-    
-    /* Stack buttons for very small screens */
-    .buttons-container {
-      flex-direction: column;
-    }
-    
-    /* Reduce vertical spacing to fit more content */
-    .title, .subtitle {
-      margin-bottom: calc(var(--margin-md) * 0.5);
-    }
-    
-    /* Ensure card component fits on small screens */
-    .card {
-      justify-self: center;
-      width: min(var(--width-xxl), 90%);
-      height: min(var(--width-xxl), 90vw);
-    }
-  }
-  
-  /* Mid-size screen adjustments */
-  @container main-container (width >= 400px) and (width < 768px) {
-    /* Two-column grid maintained but with reduced gap */
-    .grid {
-      gap: var(--gap-sm);
-    }
-    
-    /* Centered buttons with wrapping */
-    .buttons-container {
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    /* Adjust card size to fit screen better */
-    .card {
-      width: min(var(--width-xxl), 45vw);
-      height: min(var(--width-xxl), 45vw);
-    }
-  }
-  
-  /* Ensure cart items display well on small screens */
-  @container main-container (width < 768px) {
-    .cart-item {
-      flex-wrap: wrap;
-      height: auto;
-      min-height: var(--height-xxl);
-      padding: var(--padding-xs);
-    }
-    
-    /* On very small screens, stack item controls */
-    @container main-container (width < 480px) {
-      .item-buttons {
-        width: 100%;
-        justify-content: flex-end;
-        margin-top: var(--margin-xxs);
-      }
-    }
-  }
-  
-  /* Fix for viewport height issues on mobile */
-  @media screen and (max-height: 800px) {
-    .size-options-container {
-      min-height: auto;
-      padding: var(--padding-lg) 0;
-    }
-    
-    /* Reduce vertical spacing */
+  /* Additional fine-tuning for very small screens */
+  @media screen and (max-width: 480px) {
     .logo-container {
-      margin-bottom: var(--margin-xl);
+      margin-top: 1rem;
+      margin-bottom: 2rem;
     }
     
-    .title, .subtitle {
-      margin-bottom: calc(var(--margin-md) * 0.7);
+    header {
+      margin-top: 1rem;
+    }
+    
+    .buttons-container {
+      gap: 1rem;
     }
   }
   
-  /* Ensure container queries are supported with fallbacks */
-  @supports not (container-type: inline-size) {
-    /* Fallback for browsers that don't support container queries */
-    @media screen and (max-width: 1080px) {
-      :root {
-        --scale-factor: clamp(0.4, calc(100vw / 1080), 1);
-        /* Apply all variable scaling from container query */
-        --title: calc(9.375rem * var(--scale-factor));
-        --main-box-text: calc(3.125rem * var(--scale-factor));
-        --title-subtext: calc(6.25rem * var(--scale-factor));
-        /* All other variables would be duplicated here */
-      }
-      
-      /* Container width-based adjustments for layout */
-      .container, .secondary-container {
-        width: 100%;
-        padding-left: max(var(--padding-xs), 10px);
-        padding-right: max(var(--padding-xs), 10px);
-      }
-      
-      /* Ensure components fit within the screen */
-      .card, .size-option-small, .size-option-medium, .size-option-large,
-      .cart-item, .chef-notes, .extra-item, .total-price, .receipt-container {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      
-      /* Force single column grid on very small screens */
-      @media screen and (max-width: 400px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-      }
+  /* Proper aspect ratio for background image */
+  body::before {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Improve visibility on high-contrast displays */
+  .title, .subtitle {
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Fix for mobile Safari height issues */
+  @supports (-webkit-touch-callout: none) {
+    body, .container {
+      min-height: -webkit-fill-available;
     }
   }
   
-  /* Accessibility improvements */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      transition-duration: 0.01ms !important;
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-    }
+  /* Make bottom text visible on all screens */
+  .price-note {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: min(4.6875rem, 5vw);
+    z-index: 10;
   }

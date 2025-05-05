@@ -1,4 +1,4 @@
-/* CSS for Pasta Pop-Up Buttons */
+/* CSS for Pasta Pop-Up Buttons - Enhanced for Responsiveness */
 
 .buttons-container {
   display: flex;
@@ -17,7 +17,7 @@
   font-family: var(--secondary-font);
   font-size: var(--main-page-buttons-text);
   font-weight: 400;
-  border: var(--stroke-sm) solid var(--main-stroke-color);
+  border: var(--stroke-lg) solid var(--main-stroke-color);
   border-radius: var(--radius-md);
   width: var(--width-full-sm);
   height: var(--height-xxl);
@@ -30,13 +30,55 @@
   padding: var(--padding-xxs);
   margin: var(--margin-none);
   line-height: var(--line-height-sm);
-  letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
 }
 
-/* Removed hover effects as requested */
-
 .button:active {
   transform: scale(var(--scale-pressed));
+}
+
+/* Responsive button adjustments */
+@media (max-width: 1080px) {
+  .buttons-container {
+    padding-left: max(var(--padding-xs), 16px);
+    padding-right: max(var(--padding-xs), 16px);
+    gap: max(var(--gap-sm), 16px);
+  }
+  
+  .button {
+    font-size: min(var(--main-page-buttons-text), 8vw);
+    border-width: min(var(--stroke-sm), 6px);
+    min-height: max(var(--height-md), 50px);
+  }
+}
+
+@media (max-width: 768px) {
+  .buttons-container {
+    padding-left: max(var(--padding-xxs), 12px);
+    padding-right: max(var(--padding-xxs), 12px);
+    gap: max(var(--gap-xs), 12px);
+    margin-bottom: max(var(--padding-md), 24px);
+  }
+  
+  .button {
+    font-size: min(var(--main-page-buttons-text), 7vw);
+    border-width: min(var(--stroke-xs), 4px);
+    min-height: max(var(--height-sm), 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .buttons-container {
+    flex-direction: column;
+    width: 100%;
+    gap: max(var(--gap-xs), 16px);
+  }
+  
+  .button {
+    width: 100%;
+    font-size: min(var(--main-page-buttons-text), 10vw);
+    padding: max(var(--padding-xxs), 8px);
+    min-height: 55px;
+  }
 }
