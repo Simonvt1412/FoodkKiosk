@@ -83,6 +83,8 @@
       .grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 var(--padding-sm);
+        margin: 0 auto; /* Center the grid */
+        max-width: 800px; /* Control maximum width */
       }
       
       /* Adjust logo for tablet */
@@ -160,15 +162,19 @@
       /* Switch Grid to single column for mobile */
       .grid {
         grid-template-columns: 1fr;
-        padding: 0 var(--padding-xs);
+        padding: 0;
         gap: var(--gap-xs);
+        margin: 0 auto;
+        width: 100%;
+        max-width: 400px;
       }
       
       /* Center all grid items */
       .grid > * {
         justify-self: center;
-        width: 90% !important; /* Override fixed widths */
-        max-width: 400px; /* Set maximum width for readability */
+        width: 100% !important; /* Override fixed widths */
+        max-width: 300px; /* Set maximum width for readability */
+        margin: 0 auto;
       }
       
       /* Fix body scrolling */
@@ -439,8 +445,8 @@
   /* Card Component */
   @container main-container (max-width: 767px) {
     .card {
-      width: 90%;
-      max-width: 200px;
+      width: 100%;
+      max-width: 150px;
       height: auto;
       aspect-ratio: 1/1; /* Maintain square shape */
       margin: var(--margin-xs) auto;
@@ -457,4 +463,33 @@
       padding-right: var(--padding-xxs);
       padding-bottom: var(--padding-xxs);
     }
+}
+
+/* Specific fix for payment screen grid alignment */
+@media screen and (min-width: 768px) {
+  /* Ensure payment page grid is properly centered */
+  .secondary-container .grid {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
   }
+}
+
+/* Additional fix for payment screen grid alignment on all screens */
+.secondary-container .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-md);
+  margin: 0 auto;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Fix specifically for payment screen cards */
+.secondary-container .card {
+  margin: var(--margin-md) auto;
+  justify-self: center;
+}
