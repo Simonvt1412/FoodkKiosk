@@ -6,6 +6,7 @@
     gap: 1.5rem;
     min-height: 100vh;
     margin-top: -15rem;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
 .size-option-small {
@@ -103,3 +104,4 @@
 .size-name-large {
     margin-bottom: -2rem;
 }
+
