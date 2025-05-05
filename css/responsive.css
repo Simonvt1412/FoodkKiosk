@@ -1,495 +1,530 @@
-/* Improved Responsive Design with Container Queries */
+/* Comprehensive Responsive Design with Container Queries */
 
-/* Enable container queries for modern browsers */
-@supports (container-type: inline-size) {
-    /* Root container settings */
-    .container {
-      container-type: inline-size;
-      container-name: main-container;
-      width: 100%;
-      max-width: 1080px; /* Preserve original design width */
-      margin: 0 auto;
-    }
+/* Base container settings - enable container queries */
+.container {
+    container-type: inline-size;
+    container-name: main-container;
+    width: 100%;
+    max-width: 1080px; /* Original design width */
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
   
-    /* Secondary container context */
-    .secondary-container {
-      container-type: inline-size;
-      container-name: secondary-container;
-    }
+  .secondary-container {
+    container-type: inline-size;
+    container-name: secondary-container;
+    width: 100%;
+  }
   
-    /* Tablet scaling for medium screens (768px - 1079px) */
-    @media screen and (max-width: 1079px) {
-      :root {
-        /* Scale font sizes proportionally but not too small */
-        --title: calc(9.375rem * 0.75);
-        --main-box-text: calc(3.125rem * 0.75);
-        --title-subtext: calc(6.25rem * 0.75);
-        --main-page-buttons-text: calc(4.6875rem * 0.75);
-        --small-box-text: calc(3.125rem * 0.75);
-        --medium-box-text: calc(3.75rem * 0.75);
-        --large-box-text: calc(4.375rem * 0.75);
-        --bottom-text: calc(4.6875rem * 0.75);
-        --box-subtext: calc(2.5rem * 0.75);
-        --button-text: calc(1.5625rem * 0.8); /* Keep buttons readable */
-        --receipt-text: calc(5.625rem * 0.75);
-        --title-secondary: calc(12.5rem * 0.75);
-        
-        /* Scale spacing proportionally but maintain hierarchy */
-        --padding-xs: calc(1.25rem * 0.8);
-        --padding-sm: calc(2.5rem * 0.8);
-        --padding-md: calc(3.125rem * 0.8);
-        --padding-lg: calc(3.75rem * 0.8);
-        --padding-xl: calc(6.875rem * 0.8);
-        
-        --margin-xs: calc(1rem * 0.8);
-        --margin-sm: calc(2rem * 0.8);
-        --margin-md: calc(3rem * 0.8);
-        --margin-lg: calc(4rem * 0.8);
-        --margin-xl: calc(5rem * 0.8);
-        --margin-xxl: calc(10rem * 0.75);
-        --margin-xxxl: calc(12rem * 0.75);
-        
-        /* Scale component sizes proportionally but maintain usability */
-        --width-xxl: calc(24.375rem * 0.75);
-        --width-xxxl: calc(31.25rem * 0.75);
-        --width-xxxxl: calc(37.5rem * 0.75);
-        --width-xxxxxl: calc(44.125rem * 0.75);
-        --width-full-sm: calc(46.875rem * 0.75);
-        --width-full-md: calc(54.375rem * 0.75);
-        --width-full-lg: calc(55.75rem * 0.75);
-        --width-full-xl: calc(59.375rem * 0.75);
-        --width-full-xxl: calc(800px * 0.75);
-        
-        --height-lg: calc(6.5625rem * 0.75);
-        --height-xl: calc(7.625rem * 0.75);
-        --height-xxl: calc(10rem * 0.75);
-        --height-xxxl: calc(11.75rem * 0.75);
-        --height-full-sm: calc(18.75rem * 0.75);
-        --height-full-md: calc(23.4375rem * 0.75);
-        --height-full-lg: calc(24.375rem * 0.75);
-        --height-full-xl: calc(28.125rem * 0.75);
-        --height-full-xxl: calc(44.125rem * 0.75);
-        --height-full-xxxl: calc(800px * 0.75);
-        
-        /* Adjust negative margins for better positioning */
-        --margin-neg-md: calc(-2rem * 0.75);
-        --margin-neg-lg: calc(-4rem * 0.75);
-        --margin-neg-xl: calc(-8rem * 0.75);
-        --margin-neg-xxl: calc(-13rem * 0.75);
-        --margin-neg-xxxl: calc(-15rem * 0.75);
-      }
+  /* Establish consistent scale factors based on container width */
+  @container main-container (width < 1080px) {
+    /* Dynamic scaling formula based on container width */
+    :root {
+      /* Font scaling based on container width */
+      --scale-factor: clamp(0.4, calc(100cqw / 1080), 1);
       
-      /* Maintain original two-column grid for tablets */
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 var(--padding-sm);
-        margin: 0 auto; /* Center the grid */
-        max-width: 800px; /* Control maximum width */
-      }
+      /* Dynamically scaled font sizes */
+      --title: calc(9.375rem * var(--scale-factor));
+      --main-box-text: calc(3.125rem * var(--scale-factor));
+      --title-subtext: calc(6.25rem * var(--scale-factor));
+      --main-page-buttons-text: calc(4.6875rem * var(--scale-factor));
+      --small-box-text: calc(3.125rem * var(--scale-factor));
+      --medium-box-text: calc(3.75rem * var(--scale-factor));
+      --large-box-text: calc(4.375rem * var(--scale-factor));
+      --bottom-text: calc(4.6875rem * var(--scale-factor));
+      --box-subtext: calc(2.5rem * var(--scale-factor));
+      --button-text: calc(1.5625rem * var(--scale-factor));
+      --receipt-text: calc(5.625rem * var(--scale-factor));
+      --title-secondary: calc(12.5rem * var(--scale-factor));
       
-      /* Adjust logo for tablet */
-      .logo-container {
-        width: calc(var(--width-full-xxl) * 0.85);
-        height: calc(var(--height-full-xxxl) * 0.85);
-        margin-bottom: var(--margin-xxl);
-      }
+      /* Stroke sizes */
+      --stroke-xs: calc(0.5rem * var(--scale-factor));
+      --stroke-sm: calc(0.625rem * var(--scale-factor));
+      --stroke-md: calc(0.75rem * var(--scale-factor));
+      --stroke-lg: calc(0.875rem * var(--scale-factor));
       
-      /* Navigation adjustments for tablet */
-      nav {
-        margin-bottom: calc(var(--margin-neg-xxl) * 0.85);
-        width: 100%;
-        padding: 0 var(--padding-xs);
-      }
+      /* Padding sizes */
+      --padding-xxs: calc(0.9375rem * var(--scale-factor));
+      --padding-xs: calc(1.25rem * var(--scale-factor));
+      --padding-sm: calc(2.5rem * var(--scale-factor));
+      --padding-md: calc(3.125rem * var(--scale-factor));
+      --padding-lg: calc(3.75rem * var(--scale-factor));
+      --padding-xl: calc(6.875rem * var(--scale-factor));
+      --padding-xxl: calc(12.5rem * var(--scale-factor));
+      --padding-xxxl: calc(18.75rem * var(--scale-factor));
+      --padding-xxxxl: calc(20rem * var(--scale-factor));
       
-      /* Adjust size options container for tablet */
-      .size-options-container {
-        margin-top: calc(var(--margin-neg-xxxl) * 0.85);
-      }
+      /* Margin sizes */
+      --margin-xxs: calc(0.5rem * var(--scale-factor));
+      --margin-xs: calc(1rem * var(--scale-factor));
+      --margin-sm: calc(2rem * var(--scale-factor));
+      --margin-md: calc(3rem * var(--scale-factor));
+      --margin-lg: calc(4rem * var(--scale-factor));
+      --margin-xl: calc(5rem * var(--scale-factor));
+      --margin-xxl: calc(10rem * var(--scale-factor));
+      --margin-xxxl: calc(12rem * var(--scale-factor));
+      --margin-neg-md: calc(-2rem * var(--scale-factor));
+      --margin-neg-lg: calc(-4rem * var(--scale-factor));
+      --margin-neg-xl: calc(-8rem * var(--scale-factor));
+      --margin-neg-xxl: calc(-13rem * var(--scale-factor));
+      --margin-neg-xxxl: calc(-15rem * var(--scale-factor));
       
-      /* Fix overflow issues */
-      body {
-        overflow-y: auto;
-      }
+      /* Widths */
+      --width-xxs: calc(7rem * var(--scale-factor));
+      --width-xs: calc(9.375rem * var(--scale-factor));
+      --width-sm: calc(10.3125rem * var(--scale-factor));
+      --width-md: calc(11rem * var(--scale-factor));
+      --width-lg: calc(12.3125rem * var(--scale-factor));
+      --width-xl: calc(14.625rem * var(--scale-factor));
+      --width-xxl: calc(24.375rem * var(--scale-factor));
+      --width-xxxl: calc(31.25rem * var(--scale-factor));
+      --width-xxxxl: calc(37.5rem * var(--scale-factor));
+      --width-xxxxxl: calc(44.125rem * var(--scale-factor));
+      --width-full-sm: calc(46.875rem * var(--scale-factor));
+      --width-full-md: calc(54.375rem * var(--scale-factor));
+      --width-full-lg: calc(55.75rem * var(--scale-factor));
+      --width-full-xl: calc(59.375rem * var(--scale-factor));
+      --width-full-xxl: calc(800px * var(--scale-factor));
       
-      /* Make sure container has appropriate overflow behavior */
-      .container {
-        overflow-x: hidden;
-        overflow-y: auto;
-      }
-    }
-  
-    /* Mobile layout adjustments (767px and below) */
-    @media screen and (max-width: 767px) {
-      :root {
-        /* Further scale down for mobile but ensure readability */
-        --title: calc(9.375rem * 0.45);
-        --main-box-text: calc(3.125rem * 0.5);
-        --title-subtext: calc(6.25rem * 0.45);
-        --main-page-buttons-text: calc(4.6875rem * 0.5);
-        --small-box-text: calc(3.125rem * 0.5);
-        --medium-box-text: calc(3.75rem * 0.5);
-        --large-box-text: calc(4.375rem * 0.5);
-        --bottom-text: calc(4.6875rem * 0.5);
-        --box-subtext: calc(2.5rem * 0.5);
-        --button-text: calc(1.5625rem * 0.6); /* Keep buttons usable */
-        --receipt-text: calc(5.625rem * 0.5);
-        --title-secondary: calc(12.5rem * 0.45);
-        
-        /* Mobile spacing - reduce but keep usable */
-        --padding-xs: calc(1.25rem * 0.6);
-        --padding-sm: calc(2.5rem * 0.55);
-        --padding-md: calc(3.125rem * 0.5);
-        --padding-lg: calc(3.75rem * 0.5);
-        --padding-xl: calc(6.875rem * 0.45);
-        
-        --margin-xs: calc(1rem * 0.6);
-        --margin-sm: calc(2rem * 0.6);
-        --margin-md: calc(3rem * 0.55);
-        --margin-lg: calc(4rem * 0.5);
-        --margin-xl: calc(5rem * 0.45);
-        --margin-xxl: calc(10rem * 0.45);
-        --margin-xxxl: calc(12rem * 0.45);
-        
-        /* Mobile component sizes - use percentages for better flexible sizing */
-        /* Adjust negative margins for better positioning */
-        --margin-neg-md: calc(-2rem * 0.5);
-        --margin-neg-lg: calc(-4rem * 0.5);
-        --margin-neg-xl: calc(-8rem * 0.5);
-        --margin-neg-xxl: calc(-13rem * 0.45);
-        --margin-neg-xxxl: calc(-15rem * 0.45);
-      }
+      /* Heights */
+      --height-xxs: calc(3.75rem * var(--scale-factor));
+      --height-xs: calc(4rem * var(--scale-factor));
+      --height-sm: calc(4.75rem * var(--scale-factor));
+      --height-md: calc(6.25rem * var(--scale-factor));
+      --height-lg: calc(6.5625rem * var(--scale-factor));
+      --height-xl: calc(7.625rem * var(--scale-factor));
+      --height-xxl: calc(10rem * var(--scale-factor));
+      --height-xxxl: calc(11.75rem * var(--scale-factor));
+      --height-full-sm: calc(18.75rem * var(--scale-factor));
+      --height-full-md: calc(23.4375rem * var(--scale-factor));
+      --height-full-lg: calc(24.375rem * var(--scale-factor));
+      --height-full-xl: calc(28.125rem * var(--scale-factor));
+      --height-full-xxl: calc(44.125rem * var(--scale-factor));
+      --height-full-xxxl: calc(800px * var(--scale-factor));
       
-      /* Switch Grid to single column for mobile */
-      .grid {
-        grid-template-columns: 1fr;
-        padding: 0;
-        gap: var(--gap-xs);
-        margin: 0 auto;
-        width: 100%;
-        max-width: 400px;
-      }
+      /* Border Radius */
+      --radius-xs: calc(1rem * var(--scale-factor));
+      --radius-sm: calc(2rem * var(--scale-factor));
+      --radius-md: calc(3rem * var(--scale-factor));
+      --radius-lg: calc(3.125rem * var(--scale-factor));
+      --radius-xl: calc(3.5rem * var(--scale-factor));
+      --radius-xxl: calc(5rem * var(--scale-factor));
+      --radius-xxxl: calc(10rem * var(--scale-factor));
       
-      /* Center all grid items */
-      .grid > * {
-        justify-self: center;
-        width: 100% !important; /* Override fixed widths */
-        max-width: 300px; /* Set maximum width for readability */
-        margin: 0 auto;
-      }
+      /* Misc Sizes */
+      --icon-xs: calc(6.25rem * var(--scale-factor));
+      --icon-sm: calc(7.6875rem * var(--scale-factor));
+      --icon-md: calc(10.625rem * var(--scale-factor));
+      --icon-lg: calc(14.625rem * var(--scale-factor));
+      --icon-xl: calc(24.375rem * var(--scale-factor));
+      --svg-icon-sm: calc(7rem * var(--scale-factor));
+      --blur-effect: calc(10px * var(--scale-factor));
       
-      /* Fix body scrolling */
-      body {
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-bottom: var(--padding-lg);
-      }
-      
-      /* Adjust spacing for mobile-first layout */
-      .container {
-        padding: var(--padding-xs);
-        overflow-x: hidden;
-        overflow-y: visible;
-        width: 100%;
-      }
-      
-      /* Fix title alignment and spacing */
-      .title {
-        margin-bottom: var(--margin-xs);
-        padding: 0 var(--padding-xs);
-      }
-      
-      .subtitle {
-        margin-bottom: var(--margin-sm);
-        padding: 0 var(--padding-xs);
-      }
+      /* Gap sizes */
+      --gap-xxs: calc(0.5rem * var(--scale-factor));
+      --gap-xs: calc(1.5rem * var(--scale-factor));
+      --gap-sm: calc(1.25rem * var(--scale-factor));
+      --gap-md: calc(5rem * var(--scale-factor));
     }
   }
   
   /* Component-specific container queries */
   
   /* Logo Component */
-  @container main-container (max-width: 767px) {
+  @container main-container (width < 1080px) {
     .logo-container {
-      width: 90%;
-      max-width: 300px;
-      height: auto;
-      aspect-ratio: 1/1; /* Maintain circular shape */
-      margin: var(--margin-lg) auto var(--margin-lg);
+      width: calc(var(--width-full-xxl));
+      height: calc(var(--height-full-xxxl));
+      margin-bottom: var(--margin-xxxl);
+    }
+  }
+  
+  /* Layout adjustments */
+  @container main-container (width < 1080px) {
+    /* Maintain layout proportions */
+    .container {
+      padding: var(--padding-sm) var(--padding-xs) var(--padding-lg);
     }
     
-    header {
-      margin-top: var(--padding-sm);
+    .secondary-container {
+      margin-top: var(--margin-xxl);
     }
   }
   
   /* Title Component */
-  @container main-container (max-width: 767px) {
+  @container main-container (width < 1080px) {
     .title {
-      margin-bottom: var(--margin-xs);
+      font-size: var(--title);
+      margin-bottom: var(--margin-md);
     }
     
     .subtitle {
-      margin-bottom: var(--margin-sm);
-    }
-  }
-  
-  /* Size Options Component */
-  @container main-container (max-width: 767px) {
-    .size-options-container {
-      gap: var(--gap-sm);
-      margin-top: -4rem; /* Better positioning for mobile */
-      padding: 0 var(--padding-xs);
-      min-height: auto; /* Don't force 100vh on mobile */
+      font-size: var(--title-subtext);
+      margin-bottom: var(--margin-md);
     }
     
-    .size-option-small, 
-    .size-option-medium, 
-    .size-option-large {
-      width: 90%; /* Use percentage for better mobile scaling */
-      margin: 0 auto var(--margin-sm);
-      height: auto; /* Let height be determined by content */
-      padding: var(--padding-sm) var(--padding-xs);
-      min-height: 120px; /* Ensure minimum height */
-    }
-    
-    /* Fix icon sizes to match container */
-    .size-icon-small,
-    .size-icon-medium,
-    .size-icon-large {
-      width: auto;
-      height: auto;
-      max-width: 40%; /* Size proportionally to container */
-      max-height: 60px;
-      padding: var(--padding-xs) 0;
-    }
-    
-    /* Fix spacing and size of text */
-    .size-name-small,
-    .size-name-medium,
-    .size-name-large,
-    .size-price-small,
-    .size-price-medium,
-    .size-price-large {
-      margin-bottom: 0;
-      padding: var(--padding-xxs);
-    }
-  }
-  
-  /* Cart Items Component */
-  @container main-container (max-width: 767px) {
-    .cart-item {
-      width: 90%;
-      max-width: 400px;
-      margin: var(--margin-sm) auto;
-      padding: var(--padding-xs);
-      height: auto; /* Let height adjust to content */
-      min-height: var(--height-lg);
-    }
-    
-    .container-cart {
-      margin-top: var(--margin-lg); /* Fix negative margin issues */
-      width: 100%;
-      padding: 0 var(--padding-xs);
-    }
-    
-    .item-name,
-    .item-price {
-      font-size: calc(var(--medium-box-text) * 0.9);
-    }
-    
-    .item-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: var(--gap-xxs);
-    }
-  }
-  
-  /* Chef Notes Component */
-  @container main-container (max-width: 767px) {
-    .chef-notes {
-      width: 90%;
-      max-width: 400px;
-      margin: var(--margin-md) auto;
-      height: auto; /* Let height adjust to content */
-      min-height: var(--height-lg);
-      padding: var(--padding-xs);
+    header {
+      margin-top: var(--padding-lg);
     }
   }
   
   /* Buttons Component */
-  @container main-container (max-width: 767px) {
+  @container main-container (width < 1080px) {
     .buttons-container {
-      flex-direction: column;
-      gap: var(--gap-xs);
-      width: 100%;
-      padding: var(--padding-xs);
-      margin-top: var(--margin-md);
-      margin-bottom: var(--margin-md);
+      margin-top: auto;
+      margin-bottom: var(--padding-lg);
+      padding: var(--no-padding) var(--padding-md);
+      gap: var(--gap-md);
     }
     
     .button {
-      width: 90%;
-      max-width: 300px;
-      height: auto;
-      min-height: var(--height-lg);
-      padding: var(--padding-xs);
-      margin: 0 auto;
+      font-size: var(--main-page-buttons-text);
+      border: var(--stroke-sm) solid var(--main-stroke-color);
+      border-radius: var(--radius-md);
+      width: var(--width-full-sm);
+      height: var(--height-xxl);
+      padding: var(--padding-xxs);
     }
   }
   
-  /* Receipt Component */
-  @container main-container (max-width: 767px) {
-    .receipt-container {
-      width: 90%;
-      max-width: 350px;
-      height: auto; /* Allow height to adjust based on content */
-      padding: var(--padding-md) var(--padding-xs);
-      margin: var(--margin-md) auto;
+  /* Size Options Component */
+  @container main-container (width < 1080px) {
+    .size-options-container {
+      gap: var(--gap-xs);
+      margin-top: var(--margin-neg-xxxl);
     }
     
-    .receipt-icon {
-      width: 50%;
-      height: auto;
-      max-width: 120px;
+    .size-option-small {
+      margin-bottom: var(--padding-xl);
+      width: var(--width-xxxxl);
+      height: var(--height-full-sm);
+      border-radius: var(--radius-sm);
+      border: var(--stroke-sm) solid var(--main-stroke-color);
     }
     
-    .receipt-text {
-      text-align: center;
-      padding: var(--padding-xs);
+    .size-icon-small {
+      margin-top: var(--padding-xs);
+      width: var(--icon-sm);
+      padding-top: calc(20px * var(--scale-factor, 1));
+      padding-bottom: var(--padding-xs);
     }
     
-    .title--secondary {
-      margin-top: var(--margin-lg);
-      margin-bottom: var(--margin-lg);
-      text-align: center;
+    .size-price, .size-name {
+      font-size: var(--small-box-text);
+    }
+    
+    .size-option-medium {
+      width: var(--width-full-sm);
+      height: var(--height-full-md);
+      border-radius: var(--radius-sm);
+      border: var(--stroke-sm) solid var(--main-stroke-color);
+      margin-bottom: var(--padding-xl);
+    }
+    
+    .size-icon-medium {
+      width: var(--icon-md);
+      padding-top: var(--padding-sm);
+      padding-bottom: var(--padding-lg);
+    }
+    
+    .size-option-large {
+      width: var(--width-full-md);
+      height: var(--height-full-xl);
+      border-radius: var(--radius-sm);
+      border: var(--stroke-sm) solid var(--main-stroke-color);
+    }
+    
+    .size-icon-large {
+      width: var(--icon-lg);
+      padding-top: var(--padding-md);
+      padding-bottom: var(--padding-lg);
+    }
+    
+    .size-name-small, .size-price-small {
+      font-size: var(--small-box-text);
+    }
+    
+    .size-name-medium, .size-price-medium {
+      font-size: var(--medium-box-text);
+    }
+    
+    .size-name-large, .size-price-large {
+      font-size: var(--large-box-text);
     }
   }
   
-  /* Total Price Component */
-  @container main-container (max-width: 767px) {
-    .total-price {
-      width: 90%;
-      max-width: 350px;
-      height: auto;
-      min-height: var(--height-xxl);
-      padding: var(--padding-xs);
-      flex-direction: column;
-      margin: var(--margin-md) auto;
-    }
-    
-    .total-text {
-      width: 100%;
-      margin-bottom: var(--margin-xs);
-      text-align: center;
-    }
-    
-    .total-price-value {
-      margin: var(--margin-xs) 0;
-    }
-    
-    .pay-button {
-      margin-top: var(--margin-xs);
-      width: 80%;
-      height: auto;
-      padding: var(--padding-xs);
-    }
-    
-    .back-arrow img {
-      width: 40px;
-      height: 40px;
-    }
-  }
-  
-  /* Navigation Component */
-  @container main-container (max-width: 767px) {
-    nav {
-      width: 100%;
-      margin: 0;
-      padding: var(--padding-xs);
-      justify-content: space-between;
-      position: relative;
-      z-index: 10;
-    }
-    
-    .back-button-svg, 
-    .home-button-svg {
-      width: 3.5rem;
-      height: 3.5rem;
-      margin: var(--padding-xxs);
-    }
-    
-    .shopping-cart-svg {
-      width: 3.5rem;
-      height: 3.5rem;
-      padding: 0.5rem;
-      bottom: 1.5rem;
-    }
-  }
-  
-  /* Extra Item Component */
-  @container main-container (max-width: 767px) {
-    .extra-item {
-      width: 90%;
-      max-width: 350px;
-      height: auto;
-      min-height: var(--height-md);
-      padding: var(--padding-xs);
-      margin: var(--margin-xs) auto;
-    }
-    
-    .extra-item-text {
-      font-size: calc(var(--box-subtext) * 0.9);
+  /* Grid Component */
+  @container main-container (width < 1080px) {
+    .grid {
+      gap: var(--gap-md);
     }
   }
   
   /* Card Component */
-  @container main-container (max-width: 767px) {
+  @container main-container (width < 1080px) {
     .card {
-      width: 100%;
-      max-width: 150px;
-      height: auto;
-      aspect-ratio: 1/1; /* Maintain square shape */
-      margin: var(--margin-xs) auto;
-      padding: var(--padding-xs);
+      margin-top: var(--padding-sm);
+      width: var(--width-xxl);
+      height: var(--width-xxl);
+      font-size: var(--main-box-text);
+      border-radius: var(--radius-xs);
+      border: var(--stroke-sm) solid var(--main-stroke-color);
     }
     
     .icon {
-      width: 40%;
-      height: auto;
-      padding-top: var(--padding-xxs);
+      width: var(--width-lg);
+      height: var(--width-lg);
+      padding-top: var(--padding-xs);
     }
     
     .subtext {
-      padding-right: var(--padding-xxs);
-      padding-bottom: var(--padding-xxs);
+      font-size: var(--box-subtext);
+      padding-right: var(--padding-xs);
     }
-}
-
-/* Specific fix for payment screen grid alignment */
-@media screen and (min-width: 768px) {
-  /* Ensure payment page grid is properly centered */
-  .secondary-container .grid {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 800px;
-    justify-content: center;
-    align-items: center;
   }
-}
-
-/* Additional fix for payment screen grid alignment on all screens */
-.secondary-container .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--gap-md);
-  margin: 0 auto;
-  width: 100%;
-  justify-items: center;
-  align-items: center;
-}
-
-/* Fix specifically for payment screen cards */
-.secondary-container .card {
-  margin: var(--margin-md) auto;
-  justify-self: center;
-}
+  
+  /* Navigation Component */
+  @container main-container (width < 1080px) {
+    nav {
+      margin-bottom: var(--margin-neg-xxl);
+    }
+    
+    .back-button-svg, .home-button-svg {
+      width: var(--svg-icon-sm);
+      height: var(--svg-icon-sm);
+      padding: var(--padding-xxs);
+      margin: var(--padding-sm);
+    }
+    
+    .shopping-cart-svg {
+      width: var(--svg-icon-sm);
+      height: var(--svg-icon-sm);
+      padding: var(--padding-xs);
+      bottom: calc(3rem * var(--scale-factor, 1));
+    }
+  }
+  
+  /* Cart Item Component */
+  @container main-container (width < 1080px) {
+    .container-cart {
+      margin-top: var(--margin-neg-lg);
+    }
+    
+    .cart-item {
+      border: var(--stroke-xs) solid var(--main-stroke-color);
+      border-radius: var(--radius-lg);
+      padding: var(--padding-xs) var(--padding-md);
+      height: var(--height-xxl);
+      width: var(--width-full-lg);
+      margin: var(--margin-lg);
+    }
+    
+    .item-name {
+      font-size: var(--medium-box-text);
+    }
+    
+    .item-price {
+      margin-right: var(--padding-md);
+      font-size: var(--box-subtext);
+    }
+    
+    .item-buttons {
+      gap: var(--gap-sm);
+    }
+    
+    .edit-button, .delete-button {
+      border-radius: var(--radius-md);
+      padding: var(--padding-xxxs) var(--padding-xs);
+      font-size: var(--button-text);
+      width: var(--width-md);
+      height: var(--height-xs);
+    }
+  }
+  
+  /* Chef Notes Component */
+  @container main-container (width < 1080px) {
+    .chef-notes {
+      border: var(--stroke-xs) solid var(--main-stroke-color);
+      border-radius: var(--radius-xl);
+      padding: var(--padding-xs) var(--padding-md);
+      font-size: var(--main-box-text);
+      height: var(--height-xl);
+      width: var(--width-full-lg);
+      margin-top: var(--margin-lg);
+      margin-bottom: var(--margin-lg);
+    }
+    
+    .add-button {
+      border-radius: var(--radius-xxl);
+      padding: var(--padding-xxs) var(--padding-xs);
+      font-size: var(--button-text);
+      width: var(--width-sm);
+      height: var(--height-xxs);
+    }
+  }
+  
+  /* Extra Item Component */
+  @container main-container (width < 1080px) {
+    .extra-item {
+      border: var(--stroke-xs) solid var(--main-stroke-color);
+      border-radius: var(--radius-xl);
+      padding: var(--padding-md) var(--padding-sm);
+      font-size: var(--main-box-text);
+      height: var(--height-lg);
+      width: var(--width-xxxl);
+    }
+    
+    .extra-item-text {
+      font-size: var(--box-subtext);
+      margin-right: var(--padding-xs);
+    }
+  }
+  
+  /* Total Price Component */
+  @container main-container (width < 1080px) {
+    .total-price {
+      border: var(--stroke-sm) solid var(--main-stroke-color);
+      border-radius: var(--radius-xxxl);
+      padding: var(--padding-xs) var(--padding-md);
+      font-size: var(--main-box-text);
+      height: var(--height-xxxl);
+      width: var(--width-full-xl);
+      margin-top: var(--margin-lg);
+    }
+    
+    .back-arrow img {
+      width: var(--icon-xs);
+      height: var(--icon-xs);
+      padding: var(--padding-xxs);
+    }
+    
+    .total-text {
+      font-size: var(--medium-box-text);
+    }
+    
+    .pay-button {
+      border-radius: var(--radius-md);
+      padding: var(--padding-xxs) var(--padding-xs);
+      font-size: var(--button-text);
+      width: var(--width-sm);
+      height: var(--height-sm);
+    }
+    
+    .total-price-value {
+      font-size: var(--main-box-text);
+    }
+  }
+  
+  /* Receipt Component */
+  @container main-container (width < 1080px) {
+    .receipt-container {
+      width: var(--width-xxxxxl);
+      height: var(--height-full-xxl);
+      border-radius: var(--radius-sm);
+      border: solid var(--main-stroke-color) var(--stroke-lg);
+    }
+    
+    .receipt-icon {
+      width: var(--icon-xl);
+      height: var(--icon-xl);
+    }
+    
+    .receipt-text {
+      font-size: var(--receipt-text);
+      margin-bottom: var(--margin-md);
+    }
+    
+    .title--secondary {
+      margin-top: var(--margin-xxl);
+      margin-bottom: var(--margin-xxl);
+      font-size: var(--title-secondary);
+    }
+  }
+  
+  /* Background and Layout adjustments */
+  @container main-container (width < 1080px) {
+    body::before {
+      filter: blur(var(--blur-effect));
+    }
+  }
+  
+  /* Ensure layout works on smaller devices with limited vertical space */
+  @container main-container (height < 800px) {
+    .size-options-container {
+      min-height: auto;
+      padding-bottom: var(--padding-xl);
+    }
+    
+    /* Reduce spacing between elements */
+    .title, .subtitle {
+      margin-bottom: calc(var(--margin-md) * 0.6);
+    }
+    
+    .logo-container {
+      margin-bottom: calc(var(--margin-xxxl) * 0.6);
+    }
+  }
+  
+  /* Maintain grid layout proportionally */
+  @container secondary-container (width < 1080px) {
+    .secondary-container .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap-md);
+      margin: 0 auto;
+      width: 100%;
+      justify-items: center;
+      align-items: center;
+    }
+    
+    .secondary-container .card {
+      margin: var(--margin-md) auto;
+      justify-self: center;
+    }
+  }
+  
+  /* Very small screen-specific adjustments */
+  @container main-container (width < 400px) {
+    /* Force single column for very small screens */
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    
+    /* Other small screen-specific adjustments */
+    .buttons-container {
+      flex-direction: column;
+    }
+  }
+  
+  /* Make sure small UI controls remain usable */
+  @container main-container (width < 500px) {
+    .item-buttons {
+      flex-direction: column;
+    }
+  }
+  
+  /* Fix for viewport height issues on mobile */
+  @media screen and (max-width: 767px) {
+    /* Additional support for mobile browsers with variable viewport height */
+    body {
+      min-height: -webkit-fill-available;
+    }
+    html {
+      height: -webkit-fill-available;
+    }
+  }
+  
+  /* Ensure container queries are supported */
+  @supports not (container-type: inline-size) {
+    /* Fallback for browsers that don't support container queries */
+    @media screen and (max-width: 1080px) {
+      :root {
+        --scale-factor: clamp(0.4, calc(100vw / 1080), 1);
+        /* Duplicate all the variable scaling from container query above */
+        --title: calc(9.375rem * var(--scale-factor));
+        --main-box-text: calc(3.125rem * var(--scale-factor));
+        --title-subtext: calc(6.25rem * var(--scale-factor));
+        /* ...and so on for all variables */
+      }
+    }
+  }
