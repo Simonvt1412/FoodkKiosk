@@ -3,27 +3,44 @@
 .chef-notes {
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
     border: var(--stroke-xs) solid var(--main-stroke-color);
-    border-radius: var(--radius-xl);
-    padding: var(--padding-xs) var(--padding-md);
+    border-radius: var(--radius-lg);
+    padding: var(--padding-md) var(--padding-md);
     color: var(--main-text-color);
     font-family: var(--secondary-font);
-    font-size: var(--main-box-text);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: var(--height-xl);
-    width: var(--width-full-lg);
-    margin-top: var(--margin-lg);
-    margin-bottom: var(--margin-lg);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 120px;
+    width: 90%;
+    position: relative;
+    font-size: var(--main-box-text);
+}
+
+.notes-textarea {
+    width: 95%;
+    height: 60px;
+    margin-top: 10px;
+    padding: var(--padding-xs);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: var(--stroke-xxs) solid var(--main-stroke-color);
+    border-radius: var(--radius-md);
+    color: var(--main-text-color);
+    font-family: var(--secondary-font);
+    font-size: var(--box-subtext);
+    resize: none;
 }
 
 .add-button {
     background-color: var(--main-color);
     color: var(--main-text-color);
-    border-radius: var(--radius-xxl);
-    padding: var(--padding-xxs) var(--padding-xs);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--padding-xxxs) var(--padding-xs);
     font-size: var(--button-text);
     font-family: var(--secondary-font);
-    width: var(--width-sm);
-    height: var(--height-xxs);
-}
+    width: var(--width-xs);
+    height: var(--height-xs);
+    cursor: pointer;
+}   

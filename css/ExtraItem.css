@@ -3,19 +3,28 @@
 .extra-item {
     background: linear-gradient(to bottom right, var(--main-color), var(--secondary-color));
     border: var(--stroke-xs) solid var(--main-stroke-color);
-    border-radius: var(--radius-xl);
-    padding: var(--padding-md) var(--padding-sm);
+    border-radius: var(--radius-lg);
+    padding: 0 var(--padding-md);
     color: var(--main-text-color);
     font-family: var(--secondary-font);
-    font-size: var(--main-box-text);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: var(--height-lg);
-    width: var(--width-xxxl);
+    height: 60px;
+    width: 90%;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--box-subtext);
 }
 
 .extra-item-text {
     font-size: var(--box-subtext);
-    margin-right: var(--padding-xs);
+    margin-right: auto;
+    margin-left: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.extra-item-text {
+    font-size: var(--box-subtext);
+    margin-left: var(--margin-neg-md);
 }
