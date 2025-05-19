@@ -11,56 +11,13 @@
     />
     <link rel="stylesheet" href="css/Main.css">
     <link rel="stylesheet" href="css/ShoppingCart.css">
-    <link rel="stylesheet" href="css/CustomizeOrder.css">
     <title>Pasta Pop-Up - Shopping Cart</title>
 </head>
 <body>
-    <nav>
-        <a href="notes-extras.html"><img class="back-button-svg" src="images/weui--back-filled.svg" alt="Back Button"></a>
-        <a href="index.html"><img class="home-button-svg" src="images/material-symbols--home.svg" alt="Home Button"></a>
-    </nav>
     <div class="container">
         <header>
-            <h1 class="title">6. Shopping Cart</h1>
+            <h1 class="title">5. Shopping Cart</h1>
         </header>
-        
-        <!-- Progress Tracker -->
-        <div class="progress-tracker">
-            <div class="progress-step completed" data-step="1">
-                <div class="step-circle">1</div>
-                <div class="step-label">Size</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step completed" data-step="2">
-                <div class="step-circle">2</div>
-                <div class="step-label">Pasta</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step completed" data-step="3">
-                <div class="step-circle">3</div>
-                <div class="step-label">Sauce</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step completed" data-step="4">
-                <div class="step-circle">4</div>
-                <div class="step-label">Extras</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step completed" data-step="5">
-                <div class="step-circle">5</div>
-                <div class="step-label">Customize</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step active" data-step="6">
-                <div class="step-circle">6</div>
-                <div class="step-label">Cart</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step" data-step="7">
-                <div class="step-circle">7</div>
-                <div class="step-label">Payment</div>
-            </div>
-        </div>
         
         <section class="container container-cart">
             <div class="cart-item">
@@ -90,8 +47,18 @@
                 </div>
             </div>
 
+            <div class="chef-notes">
+                <span>Notes for the chef</span>
+                <button class="add-button">Add</button>
+            </div>
+
+            <div class="extra-item">
+                <span class="extra-item-text">Extra item?</span>
+                <button onclick="window.location.href='size-selection.html'" class="add-button">Add</button>
+            </div>
+
             <div class="total-price">
-                <a href="customize-order.html" class="back-arrow">
+                <a href="extras-selection.html" class="back-arrow">
                     <img src="images/weui--back-filled.svg" alt="Back">
                 </a>
                 <span class="total-text">Total Price: <span class="total-price-value">$ ###</span></span>
@@ -99,8 +66,5 @@
             </div>
         </section>
     </div>
-    <footer onclick="window.location.href='shopping-cart.html'">
-        <img class="shopping-cart-svg" src="images/material-symbols--shopping-cart.svg" alt="Shopping Cart">
-    </footer>
 </body>
 </html>

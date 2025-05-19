@@ -47,26 +47,3 @@
     width: var(--width-md);
     height: var(--height-xs);
 }
-
-/* Additional CSS for the container-cart on notes-extras page */
-.container-cart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: var(--width-full-xxl);
-    margin: 0 auto;
-    padding: var(--padding-md) 0;
-}
-
-/* Specific styling for the Continue to Cart button */
-.container-cart .cart-item {
-    margin: var(--margin-lg) auto;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.container-cart .cart-item:hover {
-    transform: translateY(-2px);
-}
