@@ -18,6 +18,7 @@
 @import "./Receipt.css";
 @import "./responsive.css";
 @import "./MediaQueries.css";
+@import "./CustomizeOrder.css";
 
 :root {
 /* Font Family */

@@ -10,93 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/Main.css">
-    <link rel="stylesheet" href="css/ShoppingCart.css">
-    <link rel="stylesheet" href="css/CustomizeOrder.css">
     <title>Pasta Pop-Up - Special Instructions</title>
-    <style>
-        /* Additional styles for the notes functionality */
-        .notes-container {
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .notes-heading {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-align: center;
-            color: #333;
-        }
-
-        .notes-input {
-            width: 100%;
-            height: 120px;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            resize: none;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-        }
-
-        .notes-input:focus {
-            outline: none;
-            border-color: #ff6b35;
-        }
-
-        .quick-notes-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .quick-note-btn {
-            background-color: #f8f8f8;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            transition: all 0.2s;
-        }
-
-        .quick-note-btn:hover, .quick-note-btn:active {
-            background-color: #eee;
-        }
-
-        .notes-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .save-notes-btn {
-            background-color: #ff6b35;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 20px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .save-notes-btn:hover {
-            background-color: #e55a2b;
-        }
-
-        @media (min-width: 768px) {
-            .quick-notes-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-    </style>
 </head>
 <body>
     <nav>
@@ -105,138 +19,24 @@
     </nav>
     <div class="container">
         <header>
-            <h1 class="title">Special Instructions</h1>
+            <h1 class="title">5. Special Instructions</h1>
         </header>
-        
-        <!-- Progress Tracker (maintaining for consistency) -->
-        <div class="progress-tracker">
-            <div class="progress-step completed" data-step="1">
-                <div class="step-circle">1</div>
-                <div class="step-label">Size</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step completed" data-step="2">
-                <div class="step-circle">2</div>
-                <div class="step-label">Pasta</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step completed" data-step="3">
-                <div class="step-circle">3</div>
-                <div class="step-label">Sauce</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step completed" data-step="4">
-                <div class="step-circle">4</div>
-                <div class="step-label">Extras</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step active" data-step="5">
-                <div class="step-circle">5</div>
-                <div class="step-label">Customize</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step" data-step="6">
-                <div class="step-circle">6</div>
-                <div class="step-label">Cart</div>
-            </div>
-            <div class="progress-connector"></div>
-            <div class="progress-step" data-step="7">
-                <div class="step-circle">7</div>
-                <div class="step-label">Payment</div>
-            </div>
-        </div>
-        
         <section class="container container-cart">
             <div class="notes-container">
                 <div class="notes-heading">Add Special Instructions</div>
                 <textarea id="notes-input" class="notes-input" placeholder="Enter any special instructions or requests..."></textarea>
-                
-                <div class="notes-heading">Quick Instructions</div>
-                <div class="quick-notes-grid">
-                    <div class="quick-note-btn" data-note="No onions">No onions</div>
-                    <div class="quick-note-btn" data-note="Extra cheese">Extra cheese</div>
-                    <div class="quick-note-btn" data-note="Light sauce">Light sauce</div>
-                    <div class="quick-note-btn" data-note="Well done">Well done</div>
-                    <div class="quick-note-btn" data-note="No ice">No ice</div>
-                    <div class="quick-note-btn" data-note="Spicy">Spicy</div>
-                    <div class="quick-note-btn" data-note="Gluten-free">Gluten-free</div>
-                    <div class="quick-note-btn" data-note="Dairy-free">Dairy-free</div>
-                </div>
-            </div>
+
 
             <div class="total-price">
                 <a href="javascript:history.back()" class="back-arrow">
                     <img src="images/weui--back-filled.svg" alt="Back">
                 </a>
-                <button id="save-notes-btn" class="save-notes-btn">Save Instructions</button>
+                <a href="shopping-cart.html" class="save-notes-btn">Save Instructions</a>
             </div>
         </section>
     </div>
     <footer onclick="window.location.href='shopping-cart.html'">
         <img class="shopping-cart-svg" src="images/material-symbols--shopping-cart.svg" alt="Shopping Cart">
     </footer>
-
-    <script>
-        // Add event listeners when the document is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add event listeners to quick note buttons
-            document.querySelectorAll('.quick-note-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const note = this.getAttribute('data-note');
-                    addQuickNote(note);
-                });
-            });
-            
-            // Add event listener to save button
-            document.getElementById('save-notes-btn').addEventListener('click', saveNotes);
-            
-            // Load any existing notes if editing an item
-            try {
-                const currentItem = JSON.parse(localStorage.getItem('currentItem') || '{}');
-                if (currentItem.notes) {
-                    document.getElementById('notes-input').value = currentItem.notes;
-                }
-            } catch (e) {
-                console.error('Error loading notes:', e);
-            }
-        });
-        
-        function addQuickNote(note) {
-            const notesInput = document.getElementById('notes-input');
-            if (notesInput.value.trim() === '') {
-                notesInput.value = note;
-            } else {
-                notesInput.value += ', ' + note;
-            }
-        }
-
-        function saveNotes() {
-            try {
-                const notes = document.getElementById('notes-input').value;
-                const currentItem = JSON.parse(localStorage.getItem('currentItem') || '{}');
-                currentItem.notes = notes;
-                localStorage.setItem('currentItem', JSON.stringify(currentItem));
-                
-                // Create or update the cart item with notes
-                let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-                if (currentItem.cartIndex !== undefined) {
-                    // Update existing cart item
-                    cart[currentItem.cartIndex].notes = notes;
-                } else {
-                    // Add new item to cart with notes
-                    currentItem.quantity = currentItem.quantity || 1;
-                    cart.push(currentItem);
-                    currentItem.cartIndex = cart.length - 1;
-                }
-                
-                localStorage.setItem('cart', JSON.stringify(cart));
-                alert('Special instructions saved!');
-                window.location.href = 'cart.html';
-            } catch (e) {
-                console.error('Error saving notes:', e);
-                alert('There was an error saving your instructions. Please try again.');
-            }
-        }
-    </script>
 </body>
 </html>
