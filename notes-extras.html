@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/Main.css">
+    <link rel="stylesheet" href="css/NotesExtras.css">
+    <title>Pasta Pop-Up - Additional Options</title>
+</head>
+<body>
+    <nav>
+        <a href="extras-selection.html"><img class="back-button-svg" src="images/weui--back-filled.svg" alt="Back Button"></a>
+        <a href="index.html"><img class="home-button-svg" src="images/material-symbols--home.svg" alt="Home Button"></a>
+    </nav>
+    <div class="container">
+        <header>
+            <h1 class="title">5. Additional Options</h1>
+        </header>
+        
+        <section class="main-container">
+            <section class="grid">
+                <article class="card">
+                    <img class="icon" src="images/chef-hat_6060895.png" alt="Chef hat icon">
+                    <span>Notes for Chef</span>
+                    <textarea class="notes-textarea" placeholder="Any special requests or instructions for the chef..."></textarea>
+                </article>
+                
+                <article class="card" onclick="window.location.href='size-selection.html'">
+                    <img class="icon" src="images/add_992651.png" alt="Add icon">
+                    <span>Extra Item</span>
+                    <span class="subtext">Add another pasta</span>
+                </article>
+            </section>
+            
+            <button class="continue-button" onclick="window.location.href='shopping-cart.html'">
+                Continue to Cart →
+            </button>
+        </section>
+    </div>
+    <footer onclick="window.location.href='shopping-cart.html'">
+        <img class="shopping-cart-svg" src="images/material-symbols--shopping-cart.svg" alt="Shopping Cart">
+    </footer>
+</body>
+</html>
